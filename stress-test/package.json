@@ -1,0 +1,13 @@
+{
+  "name": "fixer-stress-test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Repeatable acceptance test for conversation continuity during tool work",
+  "main": "run_stress_test.js",
+  "scripts": {
+    "test": "node run_stress_test.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
