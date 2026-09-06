@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Audio artifacts / scratch output
+*.wav
+*.mp3
+output/
+logs/*.log
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
