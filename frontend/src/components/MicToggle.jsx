@@ -1,18 +1,11 @@
-// Visual mic control + text-only fallback input.
-//
-// HOOK POINT for Person 1: replace `onMicToggle` / wire real STT output into
-// `onUtterance`, and call `onBargeIn` the instant voice-activity detection
-// fires while the agent is speaking. Everything downstream (turn versioning,
-// state display, debug log) already reacts to those two calls correctly —
-// this component is deliberately audio-agnostic so it doesn't need to change
-// when real capture lands.
-
+import { TrackToggle, useLocalParticipant, BarVisualizer } from "@livekit/components-react";
+import { Track } from "livekit-client";
 import { useState } from "react";
-import { Mic, MicOff, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export default function MicToggle({ onUtterance, onBargeIn, agentState }) {
-  const [micOn, setMicOn] = useState(false);
   const [draft, setDraft] = useState("");
+  const { localParticipant } = useLocalParticipant();
 
   const submit = () => {
     const text = draft.trim();
@@ -24,17 +17,23 @@ export default function MicToggle({ onUtterance, onBargeIn, agentState }) {
     setDraft("");
   };
 
+  const micTrack = localParticipant?.getTrackPublication(Track.Source.Microphone);
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-      <div style={{ display: "flex", gap: 10 }}>
-        <button
-          onClick={() => setMicOn((v) => !v)}
-          aria-pressed={micOn}
-          title="Mic capture not yet wired — placeholder for Person 1's voice pipeline"
-          className={`btn-icon${micOn ? " active" : ""}`}
-        >
-          {micOn ? <Mic size={18} /> : <MicOff size={18} />}
-        </button>
+      <div style={{ display: "flex", gap: 10, alignItems: "center", position: "relative" }}>
+        <TrackToggle source={Track.Source.Microphone} className="btn-icon" />
+        
+        {micTrack?.isMuted === false && (
+          <div style={{ position: "absolute", bottom: "100%", left: 0, paddingBottom: 10 }}>
+            <BarVisualizer 
+              trackRef={{ participant: localParticipant, source: Track.Source.Microphone }} 
+              barCount={5} 
+              options={{ minHeight: 4 }} 
+              style={{ height: 30, width: 50, color: "var(--danger)" }} 
+            />
+          </div>
+        )}
 
         <input
           value={draft}
@@ -48,7 +47,7 @@ export default function MicToggle({ onUtterance, onBargeIn, agentState }) {
         </button>
       </div>
       <div style={{ fontSize: 12, color: "var(--text-faint)" }}>
-        Mic capture is a placeholder pending Person 1's LiveKit/STT integration. Sending
+        LiveKit Voice integrated. Click the mic to speak! Sending text
         while the agent is thinking, running a tool, or speaking simulates a barge-in.
       </div>
     </div>

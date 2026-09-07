@@ -1,0 +1,80 @@
+{"ts": 50053.416476791, "wall_time": 1788803957.462861, "event": "room_connected", "room": "console-e11026a5"}
+{"ts": 50053.482119375, "wall_time": 1788803957.528502, "event": "using_elevenlabs_tts"}
+{"ts": 50053.495811125, "wall_time": 1788803957.542193, "event": "agent_entered_session"}
+{"ts": 50053.497224083, "wall_time": 1788803957.543606, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 50053.497487166, "wall_time": 1788803957.543869, "event": "session_started"}
+{"ts": 51034.173698333, "wall_time": 1788804938.219249, "event": "room_connected", "room": "console-d15d4817"}
+{"ts": 51034.230275708, "wall_time": 1788804938.2758248, "event": "using_elevenlabs_tts"}
+{"ts": 51034.245658333, "wall_time": 1788804938.2912068, "event": "agent_entered_session"}
+{"ts": 51034.247477458, "wall_time": 1788804938.2930272, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 51034.248074791, "wall_time": 1788804938.2936242, "event": "session_started"}
+{"ts": 51037.286300375, "wall_time": 1788804941.331829, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51038.765395916, "wall_time": 1788804942.810915, "event": "user_transcript_final", "transcript": "There. How are you?", "item_id": null, "language": "en-US"}
+{"ts": 51038.934115291, "wall_time": 1788804942.9796321, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51043.688972583, "wall_time": 1788804947.7344582, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51044.886552541, "wall_time": 1788804948.93203, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51046.133998708, "wall_time": 1788804950.179467, "event": "user_transcript_final", "transcript": "How are you, bro?", "item_id": null, "language": "en-US"}
+{"ts": 51061.134920666, "wall_time": 1788804965.180287, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 51063.635106333, "wall_time": 1788804967.680456, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 51066.880399583, "wall_time": 1788804970.925727, "event": "user_transcript_final", "transcript": "Also, no", "item_id": null, "language": "en-US"}
+{"ts": 51067.9020635, "wall_time": 1788804971.947384, "event": "user_transcript_final", "transcript": "from the, like,", "item_id": null, "language": "en-US"}
+{"ts": 51069.566161875, "wall_time": 1788804973.6114712, "event": "user_transcript_final", "transcript": "eleven laps.", "item_id": null, "language": "en-US"}
+{"ts": 51069.634386, "wall_time": 1788804973.6796942, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51069.734175416, "wall_time": 1788804973.7794828, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51071.519144416, "wall_time": 1788804975.56444, "event": "user_transcript_final", "transcript": "Like, live clip playground.", "item_id": null, "language": "en-US"}
+{"ts": 51072.317906625, "wall_time": 1788804976.3631968, "event": "user_transcript_final", "transcript": "So", "item_id": null, "language": "en-US"}
+{"ts": 51073.117712, "wall_time": 1788804977.162997, "event": "user_transcript_final", "transcript": "fix it.", "item_id": null, "language": "en-US"}
+{"ts": 51073.574525208, "wall_time": 1788804977.619807, "event": "user_transcript_final", "transcript": "Okay?", "item_id": null, "language": "en-US"}
+{"ts": 51073.740538666, "wall_time": 1788804977.7858188, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51182.770779958, "wall_time": 1788805086.8153212, "event": "room_connected", "room": "console-dd29e870"}
+{"ts": 51182.8032335, "wall_time": 1788805086.8477728, "event": "using_elevenlabs_tts"}
+{"ts": 51182.816243458, "wall_time": 1788805086.8607821, "event": "agent_entered_session"}
+{"ts": 51182.817741416, "wall_time": 1788805086.86228, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 51182.818144833, "wall_time": 1788805086.862684, "event": "session_started"}
+{"ts": 51183.004711625, "wall_time": 1788805087.049249, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51184.204952791, "wall_time": 1788805088.249482, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51184.737270875, "wall_time": 1788805088.7817972, "event": "user_transcript_final", "transcript": "Hi there.", "item_id": null, "language": "en-US"}
+{"ts": 51185.467989875, "wall_time": 1788805089.512511, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51186.135630958, "wall_time": 1788805090.180147, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51188.858392, "wall_time": 1788805092.90289, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51189.907641833, "wall_time": 1788805093.9521332, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51190.65602875, "wall_time": 1788805094.700514, "event": "user_transcript_final", "transcript": "Hi there.", "item_id": null, "language": "en-US"}
+{"ts": 51190.968280833, "wall_time": 1788805095.012764, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51191.836053666, "wall_time": 1788805095.8805308, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51193.85735575, "wall_time": 1788805097.90182, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51194.707860041, "wall_time": 1788805098.752318, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51195.057923875, "wall_time": 1788805099.102379, "event": "user_transcript_final", "transcript": "What?", "item_id": null, "language": "en-US"}
+{"ts": 51195.348236083, "wall_time": 1788805099.39269, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51196.636438458, "wall_time": 1788805100.680883, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51198.006937833, "wall_time": 1788805102.051373, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51198.809729416, "wall_time": 1788805102.8541598, "event": "user_transcript_final", "transcript": "Why?", "item_id": null, "language": "en-US"}
+{"ts": 51198.906984166, "wall_time": 1788805102.951414, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51202.707496125, "wall_time": 1788805106.7519, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51203.799769916, "wall_time": 1788805107.8441658, "event": "user_transcript_final", "transcript": "Why you can't?", "item_id": null, "language": "en-US"}
+{"ts": 51203.95650025, "wall_time": 1788805108.000895, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51208.207514041, "wall_time": 1788805112.25188, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51209.054873708, "wall_time": 1788805113.099234, "event": "user_transcript_final", "transcript": "Hi there.", "item_id": null, "language": "en-US"}
+{"ts": 51209.257005541, "wall_time": 1788805113.301365, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51211.85723525, "wall_time": 1788805115.901577, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51213.006129625, "wall_time": 1788805117.050463, "event": "user_transcript_final", "transcript": "Tell me something.", "item_id": null, "language": "en-US"}
+{"ts": 51213.1053945, "wall_time": 1788805117.1497269, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51550.878940875, "wall_time": 1788805454.9209769, "event": "room_connected", "room": "console-966f588d"}
+{"ts": 51550.905936916, "wall_time": 1788805454.947973, "event": "using_elevenlabs_tts"}
+{"ts": 51550.920652333, "wall_time": 1788805454.962688, "event": "agent_entered_session"}
+{"ts": 51550.922202875, "wall_time": 1788805454.9642391, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 51550.922510666, "wall_time": 1788805454.964546, "event": "session_started"}
+{"ts": 51552.557083291, "wall_time": 1788805456.599108, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51553.757841708, "wall_time": 1788805457.7998579, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51553.980679833, "wall_time": 1788805458.0226948, "event": "user_transcript_final", "transcript": "Hi there.", "item_id": null, "language": "en-US"}
+{"ts": 51558.459513333, "wall_time": 1788805462.5014982, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51559.384050583, "wall_time": 1788805463.426029, "event": "user_transcript_final", "transcript": "How are you?", "item_id": null, "language": "en-US"}
+{"ts": 51559.459304625, "wall_time": 1788805463.501282, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51561.643653833, "wall_time": 1788805465.685617, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51566.818372416, "wall_time": 1788805470.8603, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51568.708280375, "wall_time": 1788805472.750195, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51572.241664833, "wall_time": 1788805476.283556, "event": "user_transcript_final", "transcript": "Oh, so tell me something about you.", "item_id": null, "language": "en-US"}
+{"ts": 51572.457550583, "wall_time": 1788805476.4994402, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 51585.359109125, "wall_time": 1788805489.400911, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 51586.168919541, "wall_time": 1788805490.210716, "event": "user_transcript_final", "transcript": "Hello?", "item_id": null, "language": "en-US"}
+{"ts": 51587.944676416, "wall_time": 1788805491.98646, "event": "user_transcript_final", "transcript": "Tell me something about you.", "item_id": null, "language": "en-US"}
+{"ts": 51588.009052041, "wall_time": 1788805492.050836, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}

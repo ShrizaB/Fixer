@@ -28,49 +28,84 @@ from livekit.agents import (
 
 from livekit.plugins import deepgram, silero
 
-from src.config import config
-from src.latency_logger import log_event
+from config import config
+from latency_logger import log_event
+
+import aiohttp
+import asyncio
+import json
+import time
+
+class FixerClient:
+    def __init__(self):
+        self.ws = None
+        self.turn_counter = 0
+
+    def next_turn_id(self):
+        self.turn_counter += 1
+        return f"t{self.turn_counter}-{int(time.time() * 1000)}"
+
+    async def connect(self, session, agent_session):
+        self.ws = await session.ws_connect("ws://localhost:8787")
+        asyncio.create_task(self.listen(agent_session))
+
+    async def listen(self, agent_session):
+        print("Listening for messages from backend...")
+        try:
+            async for msg in self.ws:
+                if msg.type == aiohttp.WSMsgType.TEXT:
+                    print(f"Backend message received: {msg.data}")
+                    data = json.loads(msg.data)
+                    if data.get("type") == "response" and data.get("final"):
+                        text = data.get("text")
+                        if text:
+                            try:
+                                print(f"Calling agent_session.say() with text: {text}")
+                                # Use agent_session.say() to trigger TTS playback
+                                agent_session.say(text)
+                                print("Successfully called agent_session.say()")
+                            except Exception as e:
+                                print(f"Error speaking text: {e}")
+        except Exception as e:
+            print(f"WebSocket listener crashed: {e}")
+
+    async def send_utterance(self, text):
+        turn_id = self.next_turn_id()
+        if self.ws:
+            await self.ws.send_json({"type": "user_utterance", "turnId": turn_id, "text": text})
+        return turn_id
+
+    async def send_interrupt(self):
+        turn_id = self.next_turn_id()
+        if self.ws:
+            await self.ws.send_json({"type": "interrupt", "turnId": turn_id})
+        return turn_id
+
+fixer_client = FixerClient()
 
 
 # ============================================================
-# RIME TTS
+# ELEVENLABS TTS
 # ============================================================
 
+import os
 try:
-    # Prefer the official LiveKit Rime plugin.
-    from livekit.plugins import rime as rime_plugin
-
-    USE_OFFICIAL_RIME_PLUGIN = True
-
+    from livekit.plugins import elevenlabs
+    USE_ELEVENLABS = True
 except ImportError:
-    # Fallback to our custom Rime implementation.
-    from src.rime_tts_plugin import RimeTTS
-
-    USE_OFFICIAL_RIME_PLUGIN = False
-
+    USE_ELEVENLABS = False
 
 def build_tts():
-    """Build the Rime TTS engine."""
-
-    if USE_OFFICIAL_RIME_PLUGIN:
-        log_event(
-            "using_official_rime_plugin",
-            model=config.RIME_MODEL_ID,
-            speaker=config.RIME_SPEAKER,
-            language=config.RIME_LANGUAGE,
+    """Build the ElevenLabs TTS engine."""
+    if USE_ELEVENLABS:
+        log_event("using_elevenlabs_tts")
+        return elevenlabs.TTS(
+            api_key=os.environ.get("ELEVENLABS_API_KEY")
         )
-
-        return rime_plugin.TTS(
-            model=config.RIME_MODEL_ID,
-            speaker=config.RIME_SPEAKER,
-            lang=config.RIME_LANGUAGE,
-            api_key=config.RIME_API_KEY,
-        )
-
     else:
-        log_event("using_fallback_custom_rime_plugin")
-
-        return RimeTTS()
+        log_event("using_fallback_tts")
+        # Return a fallback or raise error
+        raise RuntimeError("livekit-plugins-elevenlabs is not installed.")
 
 
 # ============================================================
@@ -133,7 +168,7 @@ async def entrypoint(ctx: JobContext):
 
         # -------------------------
         # Text-to-Speech
-        # Rime is the primary voice.
+        # ElevenLabs is the primary voice.
         # -------------------------
 
         tts=build_tts(),
@@ -176,6 +211,9 @@ async def entrypoint(ctx: JobContext):
     # ============================================================
     # EVENT LOGGING
     # ============================================================
+    
+    aio_session = aiohttp.ClientSession()
+    await fixer_client.connect(aio_session, session)
 
     @session.on("user_input_transcribed")
     def on_user_input_transcribed(event):
@@ -197,6 +235,7 @@ async def entrypoint(ctx: JobContext):
                     else None
                 ),
             )
+            asyncio.create_task(fixer_client.send_utterance(event.transcript))
 
     # ------------------------------------------------------------
     # USER SPEECH STATE
@@ -216,6 +255,8 @@ async def entrypoint(ctx: JobContext):
             old_state=str(event.old_state),
             new_state=str(event.new_state),
         )
+        if "SPEAKING" in str(event.new_state):
+            asyncio.create_task(fixer_client.send_interrupt())
 
     # ------------------------------------------------------------
     # AGENT SPEECH STATE
@@ -251,6 +292,7 @@ async def entrypoint(ctx: JobContext):
         log_event(
             "overlapping_speech_detected",
         )
+        asyncio.create_task(fixer_client.send_interrupt())
 
     # ------------------------------------------------------------
     # FALSE INTERRUPTION
