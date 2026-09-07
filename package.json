@@ -1,0 +1,26 @@
+{
+  "name": "fixer",
+  "version": "1.0.0",
+  "description": "Voice-native ops agent for the Rime Hackathon Challenge. An on-call engineer, hands-busy and unable to type, can ask for service status, runbooks, and deploy history by voice mid-incident.",
+  "main": "index.js",
+  "scripts": {
+    "start:all": "concurrently \"npm run start:frontend\" \"npm run start:backend\" \"npm run start:agent\"",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && node server.js",
+    "start:agent": "cd Voice_Pipeline && .venv/bin/python3 src/agent.py dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davy-anii/Fixer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davy-anii/Fixer/issues"
+  },
+  "homepage": "https://github.com/davy-anii/Fixer#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

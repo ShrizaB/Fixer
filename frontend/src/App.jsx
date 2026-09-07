@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { LiveKitRoom, RoomAudioRenderer } from "@livekit/components-react";
+import "@livekit/components-styles";
 import { createFixerClient } from "./lib/wsClient";
 import StateDisplay from "./components/StateDisplay";
 import ProviderIndicator from "./components/ProviderIndicator";
@@ -7,8 +9,11 @@ import Transcript from "./components/Transcript";
 import DebugPanel from "./components/DebugPanel";
 
 const WS_URL = import.meta.env.VITE_BACKEND_WS_URL || "ws://localhost:8787";
+const HTTP_URL = WS_URL.replace("ws://", "http://").replace("wss://", "https://");
 
 export default function App() {
+  const [token, setToken] = useState(null);
+  const [liveKitUrl, setLiveKitUrl] = useState(null);
   const [connection, setConnection] = useState("connecting");
   const [agentState, setAgentState] = useState("idle");
   const [activeTool, setActiveTool] = useState(null);
@@ -18,6 +23,15 @@ export default function App() {
   const clientRef = useRef(null);
 
   useEffect(() => {
+    // Fetch LiveKit token
+    fetch(`${HTTP_URL}/token`)
+      .then(res => res.json())
+      .then(data => {
+        setToken(data.token);
+        setLiveKitUrl(data.url);
+      })
+      .catch(err => console.error("Failed to fetch token:", err));
+
     const client = createFixerClient(WS_URL, {
       onConnectionChange: setConnection,
       onMessage: (msg) => {
@@ -64,8 +78,18 @@ export default function App() {
     clientRef.current.sendInterrupt();
   };
 
+  if (!token) return <div>Connecting to LiveKit...</div>;
+
   return (
-    <div className="app-shell" style={{ display: "grid", gridTemplateColumns: "1fr 380px", height: "100vh", minHeight: 0 }}>
+    <LiveKitRoom
+      token={token}
+      serverUrl={liveKitUrl}
+      connect={true}
+      audio={true}
+      video={false}
+      style={{ display: "grid", gridTemplateColumns: "1fr 380px", height: "100vh", minHeight: 0 }}
+      className="app-shell"
+    >
       <div style={{ display: "flex", flexDirection: "column", padding: "28px 32px", minWidth: 0 }}>
         <header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 36 }}>
           <div>
@@ -119,7 +143,8 @@ export default function App() {
         </div>
         <DebugPanel log={log} />
       </aside>
-    </div>
+      <RoomAudioRenderer />
+    </LiveKitRoom>
   );
 }
 

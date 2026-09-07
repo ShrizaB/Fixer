@@ -1,17 +1,17 @@
 {
   "summary": {
-    "ranAt": "2026-09-04T19:10:03.215Z",
+    "ranAt": "2026-09-07T07:57:05.748Z",
     "target": "ws://localhost:8787",
-    "toolDelayMs": 800,
-    "runs": 15,
-    "passed": 15,
+    "toolDelayMs": 1500,
+    "runs": 20,
+    "passed": 20,
     "failed": 0,
     "passRate": 1,
     "interruptToCorrectFinalStateLatencyMs": {
-      "p50": 802,
-      "p95": 805,
-      "max": 805,
-      "min": 801
+      "p50": 1504,
+      "p95": 3919,
+      "max": 3919,
+      "min": 1503
     },
     "failureReasons": []
   },
@@ -19,3405 +19,4646 @@
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 3919,
       "events": [
         {
-          "t": 1788548986301,
+          "t": 1788767781161,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548986297,
+          "t": 1788767781160,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548986297
+          "ts": 1788767781160
         },
         {
-          "t": 1788548986297,
+          "t": 1788767781160,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548986297
+          "ts": 1788767781160
         },
         {
-          "t": 1788548986301,
+          "t": 1788767781162,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t1-1788548986301",
+          "turnId": "t1-1788767781161",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548986301
+          "ts": 1788767781162
         },
         {
-          "t": 1788548986301,
+          "t": 1788767781162,
           "type": "state",
           "state": "thinking",
-          "turnId": "t1-1788548986301",
-          "ts": 1788548986301
+          "turnId": "t1-1788767781161",
+          "ts": 1788767781162
         },
         {
-          "t": 1788548986301,
-          "type": "state",
-          "state": "tool_running",
-          "turnId": "t1-1788548986301",
-          "ts": 1788548986301
-        },
-        {
-          "t": 1788548986302,
-          "type": "log",
-          "event": "tool_call_dispatched",
-          "turnId": "t1-1788548986301",
-          "detail": {
-            "tool": "get_status",
-            "args": {
-              "service": "checkout-api"
-            }
-          },
-          "ts": 1788548986302
-        },
-        {
-          "t": 1788548986302,
-          "type": "tool_call",
-          "turnId": "t1-1788548986301",
-          "tool": "get_status",
-          "args": {
-            "service": "checkout-api"
-          },
-          "ts": 1788548986302
-        },
-        {
-          "t": 1788548986623,
+          "t": 1788767781763,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548986623,
+          "t": 1788767781764,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "detail": {
-            "superseded": "t1-1788548986301"
+            "superseded": "t1-1788767781161"
           },
-          "ts": 1788548986623
+          "ts": 1788767781764
         },
         {
-          "t": 1788548986624,
+          "t": 1788767781765,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t1-1788548986301",
+          "turnId": "t1-1788767781161",
           "detail": {
-            "by": "t2-1788548986623"
+            "by": "t2-1788767781763"
           },
-          "ts": 1788548986624
+          "ts": 1788767781765
         },
         {
-          "t": 1788548986624,
+          "t": 1788767781765,
           "type": "state",
           "state": "listening",
-          "turnId": "t2-1788548986623",
-          "ts": 1788548986624
+          "turnId": "t2-1788767781763",
+          "ts": 1788767781765
         },
         {
-          "t": 1788548986624,
+          "t": 1788767781765,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548986624
+          "ts": 1788767781765
         },
         {
-          "t": 1788548986624,
+          "t": 1788767781765,
           "type": "state",
           "state": "thinking",
-          "turnId": "t2-1788548986623",
-          "ts": 1788548986624
+          "turnId": "t2-1788767781763",
+          "ts": 1788767781765
         },
         {
-          "t": 1788548986625,
+          "t": 1788767784177,
+          "type": "log",
+          "event": "tool_result_discarded",
+          "turnId": "t1-1788767781161",
+          "detail": {
+            "result": {
+              "error": "Cancelled before dispatch"
+            },
+            "stale": true
+          },
+          "ts": 1788767784177
+        },
+        {
+          "t": 1788767784178,
+          "type": "tool_result",
+          "turnId": "t1-1788767781161",
+          "tool": "unknown",
+          "result": {
+            "error": "Cancelled before dispatch"
+          },
+          "stale": true,
+          "ts": 1788767784178
+        },
+        {
+          "t": 1788767784178,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t2-1788548986623",
-          "ts": 1788548986625
+          "turnId": "t2-1788767781763",
+          "ts": 1788767784178
         },
         {
-          "t": 1788548986625,
+          "t": 1788767784178,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548986625
+          "ts": 1788767784178
         },
         {
-          "t": 1788548986625,
+          "t": 1788767784178,
           "type": "tool_call",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548986625
+          "ts": 1788767784178
         },
         {
-          "t": 1788548987103,
-          "type": "log",
-          "event": "tool_result_discarded",
-          "turnId": "t1-1788548986301",
-          "detail": {
-            "result": {
-              "status": "degraded",
-              "errorRate": "4.2%",
-              "region": "us-east-1"
-            },
-            "stale": true
-          },
-          "ts": 1788548987103
-        },
-        {
-          "t": 1788548987103,
-          "type": "tool_result",
-          "turnId": "t1-1788548986301",
-          "tool": "get_status",
-          "result": {
-            "status": "degraded",
-            "errorRate": "4.2%",
-            "region": "us-east-1"
-          },
-          "stale": true,
-          "ts": 1788548987103
-        },
-        {
-          "t": 1788548987425,
+          "t": 1788767785679,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548987425
+          "ts": 1788767785679
         },
         {
-          "t": 1788548987425,
+          "t": 1788767785679,
           "type": "tool_result",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548987425
+          "ts": 1788767785679
         },
         {
-          "t": 1788548987425,
+          "t": 1788767785679,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t2-1788767781763",
+          "ts": 1788767785679
+        },
+        {
+          "t": 1788767785682,
           "type": "state",
           "state": "speaking",
-          "turnId": "t2-1788548986623",
-          "ts": 1788548987425
+          "turnId": "t2-1788767781763",
+          "ts": 1788767785682
         },
         {
-          "t": 1788548987425,
+          "t": 1788767785682,
           "type": "response",
-          "turnId": "t2-1788548986623",
+          "turnId": "t2-1788767781763",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548987425
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767785682
         },
         {
-          "t": 1788548987425,
+          "t": 1788767785682,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548987425
+          "ts": 1788767785682
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1504,
       "events": [
         {
-          "t": 1788548987436,
+          "t": 1788767785688,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548987435,
+          "t": 1788767785688,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548987435
+          "ts": 1788767785688
         },
         {
-          "t": 1788548987435,
+          "t": 1788767785688,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548987435
+          "ts": 1788767785688
         },
         {
-          "t": 1788548987436,
+          "t": 1788767785688,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t3-1788548987436",
+          "turnId": "t3-1788767785688",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548987436
+          "ts": 1788767785688
         },
         {
-          "t": 1788548987436,
+          "t": 1788767785688,
           "type": "state",
           "state": "thinking",
-          "turnId": "t3-1788548987436",
-          "ts": 1788548987436
+          "turnId": "t3-1788767785688",
+          "ts": 1788767785688
         },
         {
-          "t": 1788548987436,
+          "t": 1788767785689,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t3-1788548987436",
-          "ts": 1788548987436
+          "turnId": "t3-1788767785688",
+          "ts": 1788767785689
         },
         {
-          "t": 1788548987436,
+          "t": 1788767785689,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t3-1788548987436",
+          "turnId": "t3-1788767785688",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548987436
+          "ts": 1788767785689
         },
         {
-          "t": 1788548987436,
+          "t": 1788767785689,
           "type": "tool_call",
-          "turnId": "t3-1788548987436",
+          "turnId": "t3-1788767785688",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548987436
+          "ts": 1788767785689
         },
         {
-          "t": 1788548987757,
+          "t": 1788767786290,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548987758,
+          "t": 1788767786290,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "detail": {
-            "superseded": "t3-1788548987436"
+            "superseded": "t3-1788767785688"
           },
-          "ts": 1788548987758
+          "ts": 1788767786290
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786290,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t3-1788548987436",
+          "turnId": "t3-1788767785688",
           "detail": {
-            "by": "t4-1788548987757"
+            "by": "t4-1788767786290"
           },
-          "ts": 1788548987759
+          "ts": 1788767786290
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786290,
           "type": "state",
           "state": "listening",
-          "turnId": "t4-1788548987757",
-          "ts": 1788548987759
+          "turnId": "t4-1788767786290",
+          "ts": 1788767786290
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786290,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548987759
+          "ts": 1788767786290
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786290,
           "type": "state",
           "state": "thinking",
-          "turnId": "t4-1788548987757",
-          "ts": 1788548987759
+          "turnId": "t4-1788767786290",
+          "ts": 1788767786290
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786291,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t4-1788548987757",
-          "ts": 1788548987759
+          "turnId": "t4-1788767786290",
+          "ts": 1788767786291
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786291,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548987759
+          "ts": 1788767786291
         },
         {
-          "t": 1788548987759,
+          "t": 1788767786291,
           "type": "tool_call",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548987759
+          "ts": 1788767786291
         },
         {
-          "t": 1788548988237,
+          "t": 1788767787190,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t3-1788548987436",
+          "turnId": "t3-1788767785688",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548988237
+          "ts": 1788767787190
         },
         {
-          "t": 1788548988237,
+          "t": 1788767787191,
           "type": "tool_result",
-          "turnId": "t3-1788548987436",
+          "turnId": "t3-1788767785688",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548988237
+          "ts": 1788767787191
         },
         {
-          "t": 1788548988559,
+          "t": 1788767787793,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548988559
+          "ts": 1788767787793
         },
         {
-          "t": 1788548988559,
+          "t": 1788767787793,
           "type": "tool_result",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548988559
+          "ts": 1788767787793
         },
         {
-          "t": 1788548988559,
+          "t": 1788767787793,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t4-1788767786290",
+          "ts": 1788767787793
+        },
+        {
+          "t": 1788767787794,
           "type": "state",
           "state": "speaking",
-          "turnId": "t4-1788548987757",
-          "ts": 1788548988559
+          "turnId": "t4-1788767786290",
+          "ts": 1788767787794
         },
         {
-          "t": 1788548988559,
+          "t": 1788767787794,
           "type": "response",
-          "turnId": "t4-1788548987757",
+          "turnId": "t4-1788767786290",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548988559
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767787794
         },
         {
-          "t": 1788548988559,
+          "t": 1788767787794,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548988559
+          "ts": 1788767787794
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1506,
       "events": [
         {
-          "t": 1788548988568,
+          "t": 1788767787798,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548988567,
+          "t": 1788767787798,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548988567
+          "ts": 1788767787798
         },
         {
-          "t": 1788548988567,
+          "t": 1788767787798,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548988567
+          "ts": 1788767787798
         },
         {
-          "t": 1788548988568,
+          "t": 1788767787798,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t5-1788548988568",
+          "turnId": "t5-1788767787798",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548988568
+          "ts": 1788767787798
         },
         {
-          "t": 1788548988568,
+          "t": 1788767787798,
           "type": "state",
           "state": "thinking",
-          "turnId": "t5-1788548988568",
-          "ts": 1788548988568
+          "turnId": "t5-1788767787798",
+          "ts": 1788767787798
         },
         {
-          "t": 1788548988568,
+          "t": 1788767787799,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t5-1788548988568",
-          "ts": 1788548988568
+          "turnId": "t5-1788767787798",
+          "ts": 1788767787799
         },
         {
-          "t": 1788548988568,
+          "t": 1788767787799,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t5-1788548988568",
+          "turnId": "t5-1788767787798",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548988568
+          "ts": 1788767787799
         },
         {
-          "t": 1788548988568,
+          "t": 1788767787799,
           "type": "tool_call",
-          "turnId": "t5-1788548988568",
+          "turnId": "t5-1788767787798",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548988568
+          "ts": 1788767787799
         },
         {
-          "t": 1788548988889,
+          "t": 1788767788400,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548988889,
+          "t": 1788767788400,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "detail": {
-            "superseded": "t5-1788548988568"
+            "superseded": "t5-1788767787798"
           },
-          "ts": 1788548988889
+          "ts": 1788767788400
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788400,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t5-1788548988568",
+          "turnId": "t5-1788767787798",
           "detail": {
-            "by": "t6-1788548988889"
+            "by": "t6-1788767788400"
           },
-          "ts": 1788548988890
+          "ts": 1788767788400
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788400,
           "type": "state",
           "state": "listening",
-          "turnId": "t6-1788548988889",
-          "ts": 1788548988890
+          "turnId": "t6-1788767788400",
+          "ts": 1788767788400
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788401,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548988890
+          "ts": 1788767788401
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788401,
           "type": "state",
           "state": "thinking",
-          "turnId": "t6-1788548988889",
-          "ts": 1788548988890
+          "turnId": "t6-1788767788400",
+          "ts": 1788767788401
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788402,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t6-1788548988889",
-          "ts": 1788548988890
+          "turnId": "t6-1788767788400",
+          "ts": 1788767788402
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788402,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548988890
+          "ts": 1788767788402
         },
         {
-          "t": 1788548988890,
+          "t": 1788767788402,
           "type": "tool_call",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548988890
+          "ts": 1788767788402
         },
         {
-          "t": 1788548989369,
+          "t": 1788767789301,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t5-1788548988568",
+          "turnId": "t5-1788767787798",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548989369
+          "ts": 1788767789301
         },
         {
-          "t": 1788548989369,
+          "t": 1788767789301,
           "type": "tool_result",
-          "turnId": "t5-1788548988568",
+          "turnId": "t5-1788767787798",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548989369
+          "ts": 1788767789301
         },
         {
-          "t": 1788548989691,
+          "t": 1788767789904,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548989691
+          "ts": 1788767789904
         },
         {
-          "t": 1788548989691,
+          "t": 1788767789904,
           "type": "tool_result",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548989691
+          "ts": 1788767789904
         },
         {
-          "t": 1788548989691,
+          "t": 1788767789904,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t6-1788767788400",
+          "ts": 1788767789904
+        },
+        {
+          "t": 1788767789906,
           "type": "state",
           "state": "speaking",
-          "turnId": "t6-1788548988889",
-          "ts": 1788548989691
+          "turnId": "t6-1788767788400",
+          "ts": 1788767789906
         },
         {
-          "t": 1788548989691,
+          "t": 1788767789906,
           "type": "response",
-          "turnId": "t6-1788548988889",
+          "turnId": "t6-1788767788400",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548989691
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767789906
         },
         {
-          "t": 1788548989691,
+          "t": 1788767789906,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548989691
+          "ts": 1788767789906
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1505,
       "events": [
         {
-          "t": 1788548989695,
+          "t": 1788767789910,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548989695,
+          "t": 1788767789909,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548989695
+          "ts": 1788767789909
         },
         {
-          "t": 1788548989695,
+          "t": 1788767789909,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548989695
+          "ts": 1788767789909
         },
         {
-          "t": 1788548989696,
+          "t": 1788767789910,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t7-1788548989695",
+          "turnId": "t7-1788767789910",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548989696
+          "ts": 1788767789910
         },
         {
-          "t": 1788548989696,
+          "t": 1788767789910,
           "type": "state",
           "state": "thinking",
-          "turnId": "t7-1788548989695",
-          "ts": 1788548989696
+          "turnId": "t7-1788767789910",
+          "ts": 1788767789910
         },
         {
-          "t": 1788548989696,
+          "t": 1788767789910,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t7-1788548989695",
-          "ts": 1788548989696
+          "turnId": "t7-1788767789910",
+          "ts": 1788767789910
         },
         {
-          "t": 1788548989696,
+          "t": 1788767789910,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t7-1788548989695",
+          "turnId": "t7-1788767789910",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548989696
+          "ts": 1788767789910
         },
         {
-          "t": 1788548989696,
+          "t": 1788767789910,
           "type": "tool_call",
-          "turnId": "t7-1788548989695",
+          "turnId": "t7-1788767789910",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548989696
+          "ts": 1788767789910
         },
         {
-          "t": 1788548990016,
+          "t": 1788767790511,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548990016,
+          "t": 1788767790512,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "detail": {
-            "superseded": "t7-1788548989695"
+            "superseded": "t7-1788767789910"
           },
-          "ts": 1788548990016
+          "ts": 1788767790512
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790512,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t7-1788548989695",
+          "turnId": "t7-1788767789910",
           "detail": {
-            "by": "t8-1788548990016"
+            "by": "t8-1788767790511"
           },
-          "ts": 1788548990017
+          "ts": 1788767790512
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790512,
           "type": "state",
           "state": "listening",
-          "turnId": "t8-1788548990016",
-          "ts": 1788548990017
+          "turnId": "t8-1788767790511",
+          "ts": 1788767790512
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790512,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548990017
+          "ts": 1788767790512
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790512,
           "type": "state",
           "state": "thinking",
-          "turnId": "t8-1788548990016",
-          "ts": 1788548990017
+          "turnId": "t8-1788767790511",
+          "ts": 1788767790512
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790513,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t8-1788548990016",
-          "ts": 1788548990017
+          "turnId": "t8-1788767790511",
+          "ts": 1788767790513
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790513,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548990017
+          "ts": 1788767790513
         },
         {
-          "t": 1788548990017,
+          "t": 1788767790513,
           "type": "tool_call",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548990017
+          "ts": 1788767790513
         },
         {
-          "t": 1788548990496,
+          "t": 1788767791412,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t7-1788548989695",
+          "turnId": "t7-1788767789910",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548990496
+          "ts": 1788767791412
         },
         {
-          "t": 1788548990496,
+          "t": 1788767791412,
           "type": "tool_result",
-          "turnId": "t7-1788548989695",
+          "turnId": "t7-1788767789910",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548990496
+          "ts": 1788767791412
         },
         {
-          "t": 1788548990817,
+          "t": 1788767792014,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548990817
+          "ts": 1788767792014
         },
         {
-          "t": 1788548990817,
+          "t": 1788767792015,
           "type": "tool_result",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548990817
+          "ts": 1788767792015
         },
         {
-          "t": 1788548990818,
+          "t": 1788767792015,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t8-1788767790511",
+          "ts": 1788767792015
+        },
+        {
+          "t": 1788767792016,
           "type": "state",
           "state": "speaking",
-          "turnId": "t8-1788548990016",
-          "ts": 1788548990818
+          "turnId": "t8-1788767790511",
+          "ts": 1788767792016
         },
         {
-          "t": 1788548990818,
+          "t": 1788767792016,
           "type": "response",
-          "turnId": "t8-1788548990016",
+          "turnId": "t8-1788767790511",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548990818
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767792016
         },
         {
-          "t": 1788548990818,
+          "t": 1788767792016,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548990818
+          "ts": 1788767792016
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 801,
+      "interruptToLastArtifactMs": 1505,
       "events": [
         {
-          "t": 1788548990821,
+          "t": 1788767792019,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548990821,
+          "t": 1788767792019,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548990821
+          "ts": 1788767792019
         },
         {
-          "t": 1788548990821,
+          "t": 1788767792019,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548990821
+          "ts": 1788767792019
         },
         {
-          "t": 1788548990822,
+          "t": 1788767792019,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t9-1788548990821",
+          "turnId": "t9-1788767792019",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548990822
+          "ts": 1788767792019
         },
         {
-          "t": 1788548990822,
+          "t": 1788767792019,
           "type": "state",
           "state": "thinking",
-          "turnId": "t9-1788548990821",
-          "ts": 1788548990822
+          "turnId": "t9-1788767792019",
+          "ts": 1788767792019
         },
         {
-          "t": 1788548990822,
+          "t": 1788767792020,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t9-1788548990821",
-          "ts": 1788548990822
+          "turnId": "t9-1788767792019",
+          "ts": 1788767792020
         },
         {
-          "t": 1788548990822,
+          "t": 1788767792021,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t9-1788548990821",
+          "turnId": "t9-1788767792019",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548990822
+          "ts": 1788767792021
         },
         {
-          "t": 1788548990822,
+          "t": 1788767792021,
           "type": "tool_call",
-          "turnId": "t9-1788548990821",
+          "turnId": "t9-1788767792019",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548990822
+          "ts": 1788767792021
         },
         {
-          "t": 1788548991142,
+          "t": 1788767792620,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548991142,
+          "t": 1788767792621,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "detail": {
-            "superseded": "t9-1788548990821"
+            "superseded": "t9-1788767792019"
           },
-          "ts": 1788548991142
+          "ts": 1788767792621
         },
         {
-          "t": 1788548991142,
+          "t": 1788767792621,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t9-1788548990821",
+          "turnId": "t9-1788767792019",
           "detail": {
-            "by": "t10-1788548991142"
+            "by": "t10-1788767792620"
           },
-          "ts": 1788548991142
+          "ts": 1788767792621
         },
         {
-          "t": 1788548991143,
+          "t": 1788767792621,
           "type": "state",
           "state": "listening",
-          "turnId": "t10-1788548991142",
-          "ts": 1788548991143
+          "turnId": "t10-1788767792620",
+          "ts": 1788767792621
         },
         {
-          "t": 1788548991143,
+          "t": 1788767792621,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548991143
+          "ts": 1788767792621
         },
         {
-          "t": 1788548991143,
+          "t": 1788767792621,
           "type": "state",
           "state": "thinking",
-          "turnId": "t10-1788548991142",
-          "ts": 1788548991143
+          "turnId": "t10-1788767792620",
+          "ts": 1788767792621
         },
         {
-          "t": 1788548991143,
+          "t": 1788767792622,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t10-1788548991142",
-          "ts": 1788548991143
+          "turnId": "t10-1788767792620",
+          "ts": 1788767792622
         },
         {
-          "t": 1788548991143,
+          "t": 1788767792622,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548991143
+          "ts": 1788767792622
         },
         {
-          "t": 1788548991143,
+          "t": 1788767792622,
           "type": "tool_call",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548991143
+          "ts": 1788767792622
         },
         {
-          "t": 1788548991623,
+          "t": 1788767793522,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t9-1788548990821",
+          "turnId": "t9-1788767792019",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548991623
+          "ts": 1788767793522
         },
         {
-          "t": 1788548991623,
+          "t": 1788767793522,
           "type": "tool_result",
-          "turnId": "t9-1788548990821",
+          "turnId": "t9-1788767792019",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548991623
+          "ts": 1788767793522
         },
         {
-          "t": 1788548991943,
+          "t": 1788767794124,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548991943
+          "ts": 1788767794124
         },
         {
-          "t": 1788548991943,
+          "t": 1788767794124,
           "type": "tool_result",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548991943
+          "ts": 1788767794124
         },
         {
-          "t": 1788548991943,
+          "t": 1788767794125,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t10-1788767792620",
+          "ts": 1788767794125
+        },
+        {
+          "t": 1788767794125,
           "type": "state",
           "state": "speaking",
-          "turnId": "t10-1788548991142",
-          "ts": 1788548991943
+          "turnId": "t10-1788767792620",
+          "ts": 1788767794125
         },
         {
-          "t": 1788548991943,
+          "t": 1788767794125,
           "type": "response",
-          "turnId": "t10-1788548991142",
+          "turnId": "t10-1788767792620",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548991943
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767794125
         },
         {
-          "t": 1788548991943,
+          "t": 1788767794126,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548991943
+          "ts": 1788767794126
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 803,
+      "interruptToLastArtifactMs": 1505,
       "events": [
         {
-          "t": 1788548991947,
+          "t": 1788767794129,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548991947,
+          "t": 1788767794129,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548991947
+          "ts": 1788767794129
         },
         {
-          "t": 1788548991947,
+          "t": 1788767794129,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548991947
+          "ts": 1788767794129
         },
         {
-          "t": 1788548991948,
+          "t": 1788767794129,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t11-1788548991947",
+          "turnId": "t11-1788767794129",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548991948
+          "ts": 1788767794129
         },
         {
-          "t": 1788548991948,
+          "t": 1788767794129,
           "type": "state",
           "state": "thinking",
-          "turnId": "t11-1788548991947",
-          "ts": 1788548991948
+          "turnId": "t11-1788767794129",
+          "ts": 1788767794129
         },
         {
-          "t": 1788548991948,
+          "t": 1788767794130,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t11-1788548991947",
-          "ts": 1788548991948
+          "turnId": "t11-1788767794129",
+          "ts": 1788767794130
         },
         {
-          "t": 1788548991948,
+          "t": 1788767794130,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t11-1788548991947",
+          "turnId": "t11-1788767794129",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548991948
+          "ts": 1788767794130
         },
         {
-          "t": 1788548991948,
+          "t": 1788767794130,
           "type": "tool_call",
-          "turnId": "t11-1788548991947",
+          "turnId": "t11-1788767794129",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548991948
+          "ts": 1788767794130
         },
         {
-          "t": 1788548992268,
+          "t": 1788767794730,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548992269,
+          "t": 1788767794731,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "detail": {
-            "superseded": "t11-1788548991947"
+            "superseded": "t11-1788767794129"
           },
-          "ts": 1788548992269
+          "ts": 1788767794731
         },
         {
-          "t": 1788548992269,
+          "t": 1788767794731,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t11-1788548991947",
+          "turnId": "t11-1788767794129",
           "detail": {
-            "by": "t12-1788548992268"
+            "by": "t12-1788767794730"
           },
-          "ts": 1788548992269
+          "ts": 1788767794731
         },
         {
-          "t": 1788548992269,
+          "t": 1788767794731,
           "type": "state",
           "state": "listening",
-          "turnId": "t12-1788548992268",
-          "ts": 1788548992269
+          "turnId": "t12-1788767794730",
+          "ts": 1788767794731
         },
         {
-          "t": 1788548992269,
+          "t": 1788767794731,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548992269
+          "ts": 1788767794731
         },
         {
-          "t": 1788548992270,
+          "t": 1788767794731,
           "type": "state",
           "state": "thinking",
-          "turnId": "t12-1788548992268",
-          "ts": 1788548992270
+          "turnId": "t12-1788767794730",
+          "ts": 1788767794731
         },
         {
-          "t": 1788548992270,
+          "t": 1788767794732,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t12-1788548992268",
-          "ts": 1788548992270
+          "turnId": "t12-1788767794730",
+          "ts": 1788767794732
         },
         {
-          "t": 1788548992270,
+          "t": 1788767794732,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548992270
+          "ts": 1788767794732
         },
         {
-          "t": 1788548992270,
+          "t": 1788767794733,
           "type": "tool_call",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548992270
+          "ts": 1788767794733
         },
         {
-          "t": 1788548992749,
+          "t": 1788767795631,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t11-1788548991947",
+          "turnId": "t11-1788767794129",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548992749
+          "ts": 1788767795631
         },
         {
-          "t": 1788548992749,
+          "t": 1788767795631,
           "type": "tool_result",
-          "turnId": "t11-1788548991947",
+          "turnId": "t11-1788767794129",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548992749
+          "ts": 1788767795631
         },
         {
-          "t": 1788548993071,
+          "t": 1788767796233,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548993071
+          "ts": 1788767796233
         },
         {
-          "t": 1788548993071,
+          "t": 1788767796233,
           "type": "tool_result",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548993071
+          "ts": 1788767796233
         },
         {
-          "t": 1788548993071,
+          "t": 1788767796233,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t12-1788767794730",
+          "ts": 1788767796233
+        },
+        {
+          "t": 1788767796235,
           "type": "state",
           "state": "speaking",
-          "turnId": "t12-1788548992268",
-          "ts": 1788548993071
+          "turnId": "t12-1788767794730",
+          "ts": 1788767796235
         },
         {
-          "t": 1788548993071,
+          "t": 1788767796235,
           "type": "response",
-          "turnId": "t12-1788548992268",
+          "turnId": "t12-1788767794730",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548993071
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767796235
         },
         {
-          "t": 1788548993071,
+          "t": 1788767796235,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548993071
+          "ts": 1788767796235
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 803,
+      "interruptToLastArtifactMs": 1505,
       "events": [
         {
-          "t": 1788548993075,
+          "t": 1788767796238,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548993075,
+          "t": 1788767796238,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548993075
+          "ts": 1788767796238
         },
         {
-          "t": 1788548993075,
+          "t": 1788767796238,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548993075
+          "ts": 1788767796238
         },
         {
-          "t": 1788548993076,
+          "t": 1788767796238,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t13-1788548993075",
+          "turnId": "t13-1788767796238",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548993076
+          "ts": 1788767796238
         },
         {
-          "t": 1788548993076,
+          "t": 1788767796238,
           "type": "state",
           "state": "thinking",
-          "turnId": "t13-1788548993075",
-          "ts": 1788548993076
+          "turnId": "t13-1788767796238",
+          "ts": 1788767796238
         },
         {
-          "t": 1788548993076,
+          "t": 1788767796239,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t13-1788548993075",
-          "ts": 1788548993076
+          "turnId": "t13-1788767796238",
+          "ts": 1788767796239
         },
         {
-          "t": 1788548993076,
+          "t": 1788767796239,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t13-1788548993075",
+          "turnId": "t13-1788767796238",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548993076
+          "ts": 1788767796239
         },
         {
-          "t": 1788548993076,
+          "t": 1788767796239,
           "type": "tool_call",
-          "turnId": "t13-1788548993075",
+          "turnId": "t13-1788767796238",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548993076
+          "ts": 1788767796239
         },
         {
-          "t": 1788548993396,
+          "t": 1788767796839,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796839,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "detail": {
-            "superseded": "t13-1788548993075"
+            "superseded": "t13-1788767796238"
           },
-          "ts": 1788548993397
+          "ts": 1788767796839
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796839,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t13-1788548993075",
+          "turnId": "t13-1788767796238",
           "detail": {
-            "by": "t14-1788548993396"
+            "by": "t14-1788767796839"
           },
-          "ts": 1788548993397
+          "ts": 1788767796839
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796839,
           "type": "state",
           "state": "listening",
-          "turnId": "t14-1788548993396",
-          "ts": 1788548993397
+          "turnId": "t14-1788767796839",
+          "ts": 1788767796839
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796839,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548993397
+          "ts": 1788767796839
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796839,
           "type": "state",
           "state": "thinking",
-          "turnId": "t14-1788548993396",
-          "ts": 1788548993397
+          "turnId": "t14-1788767796839",
+          "ts": 1788767796839
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796840,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t14-1788548993396",
-          "ts": 1788548993397
+          "turnId": "t14-1788767796839",
+          "ts": 1788767796840
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796840,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548993397
+          "ts": 1788767796840
         },
         {
-          "t": 1788548993397,
+          "t": 1788767796840,
           "type": "tool_call",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548993397
+          "ts": 1788767796840
         },
         {
-          "t": 1788548993876,
+          "t": 1788767797739,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t13-1788548993075",
+          "turnId": "t13-1788767796238",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548993876
+          "ts": 1788767797739
         },
         {
-          "t": 1788548993877,
+          "t": 1788767797740,
           "type": "tool_result",
-          "turnId": "t13-1788548993075",
+          "turnId": "t13-1788767796238",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548993877
+          "ts": 1788767797740
         },
         {
-          "t": 1788548994199,
+          "t": 1788767798342,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548994199
+          "ts": 1788767798342
         },
         {
-          "t": 1788548994199,
+          "t": 1788767798342,
           "type": "tool_result",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548994199
+          "ts": 1788767798342
         },
         {
-          "t": 1788548994199,
+          "t": 1788767798342,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t14-1788767796839",
+          "ts": 1788767798342
+        },
+        {
+          "t": 1788767798344,
           "type": "state",
           "state": "speaking",
-          "turnId": "t14-1788548993396",
-          "ts": 1788548994199
+          "turnId": "t14-1788767796839",
+          "ts": 1788767798344
         },
         {
-          "t": 1788548994199,
+          "t": 1788767798344,
           "type": "response",
-          "turnId": "t14-1788548993396",
+          "turnId": "t14-1788767796839",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548994199
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767798344
         },
         {
-          "t": 1788548994199,
+          "t": 1788767798344,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548994199
+          "ts": 1788767798344
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1506,
       "events": [
         {
-          "t": 1788548994203,
+          "t": 1788767798348,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798348,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548994204
+          "ts": 1788767798348
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798348,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548994204
+          "ts": 1788767798348
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798348,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t15-1788548994203",
+          "turnId": "t15-1788767798348",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548994204
+          "ts": 1788767798348
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798348,
           "type": "state",
           "state": "thinking",
-          "turnId": "t15-1788548994203",
-          "ts": 1788548994204
+          "turnId": "t15-1788767798348",
+          "ts": 1788767798348
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798349,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t15-1788548994203",
-          "ts": 1788548994204
+          "turnId": "t15-1788767798348",
+          "ts": 1788767798349
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798349,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t15-1788548994203",
+          "turnId": "t15-1788767798348",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548994204
+          "ts": 1788767798349
         },
         {
-          "t": 1788548994204,
+          "t": 1788767798349,
           "type": "tool_call",
-          "turnId": "t15-1788548994203",
+          "turnId": "t15-1788767798348",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548994204
+          "ts": 1788767798349
         },
         {
-          "t": 1788548994524,
+          "t": 1788767798948,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798949,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "detail": {
-            "superseded": "t15-1788548994203"
+            "superseded": "t15-1788767798348"
           },
-          "ts": 1788548994525
+          "ts": 1788767798949
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798949,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t15-1788548994203",
+          "turnId": "t15-1788767798348",
           "detail": {
-            "by": "t16-1788548994524"
+            "by": "t16-1788767798948"
           },
-          "ts": 1788548994525
+          "ts": 1788767798949
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798949,
           "type": "state",
           "state": "listening",
-          "turnId": "t16-1788548994524",
-          "ts": 1788548994525
+          "turnId": "t16-1788767798948",
+          "ts": 1788767798949
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798949,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548994525
+          "ts": 1788767798949
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798949,
           "type": "state",
           "state": "thinking",
-          "turnId": "t16-1788548994524",
-          "ts": 1788548994525
+          "turnId": "t16-1788767798948",
+          "ts": 1788767798949
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798950,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t16-1788548994524",
-          "ts": 1788548994525
+          "turnId": "t16-1788767798948",
+          "ts": 1788767798950
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798950,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548994525
+          "ts": 1788767798950
         },
         {
-          "t": 1788548994525,
+          "t": 1788767798951,
           "type": "tool_call",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548994525
+          "ts": 1788767798951
         },
         {
-          "t": 1788548995008,
+          "t": 1788767799850,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t15-1788548994203",
+          "turnId": "t15-1788767798348",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548995008
+          "ts": 1788767799850
         },
         {
-          "t": 1788548995008,
+          "t": 1788767799850,
           "type": "tool_result",
-          "turnId": "t15-1788548994203",
+          "turnId": "t15-1788767798348",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548995008
+          "ts": 1788767799850
         },
         {
-          "t": 1788548995326,
+          "t": 1788767800452,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548995326
+          "ts": 1788767800452
         },
         {
-          "t": 1788548995326,
+          "t": 1788767800453,
           "type": "tool_result",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548995326
+          "ts": 1788767800453
         },
         {
-          "t": 1788548995326,
+          "t": 1788767800453,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t16-1788767798948",
+          "ts": 1788767800453
+        },
+        {
+          "t": 1788767800454,
           "type": "state",
           "state": "speaking",
-          "turnId": "t16-1788548994524",
-          "ts": 1788548995326
+          "turnId": "t16-1788767798948",
+          "ts": 1788767800454
         },
         {
-          "t": 1788548995326,
+          "t": 1788767800454,
           "type": "response",
-          "turnId": "t16-1788548994524",
+          "turnId": "t16-1788767798948",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548995326
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767800454
         },
         {
-          "t": 1788548995326,
+          "t": 1788767800454,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548995326
+          "ts": 1788767800454
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 801,
+      "interruptToLastArtifactMs": 1503,
       "events": [
         {
-          "t": 1788548995332,
+          "t": 1788767800459,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800459,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548995333
+          "ts": 1788767800459
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800459,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548995333
+          "ts": 1788767800459
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800459,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t17-1788548995332",
+          "turnId": "t17-1788767800459",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548995333
+          "ts": 1788767800459
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800459,
           "type": "state",
           "state": "thinking",
-          "turnId": "t17-1788548995332",
-          "ts": 1788548995333
+          "turnId": "t17-1788767800459",
+          "ts": 1788767800459
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800460,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t17-1788548995332",
-          "ts": 1788548995333
+          "turnId": "t17-1788767800459",
+          "ts": 1788767800460
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800460,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t17-1788548995332",
+          "turnId": "t17-1788767800459",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548995333
+          "ts": 1788767800460
         },
         {
-          "t": 1788548995333,
+          "t": 1788767800460,
           "type": "tool_call",
-          "turnId": "t17-1788548995332",
+          "turnId": "t17-1788767800459",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548995333
+          "ts": 1788767800460
         },
         {
-          "t": 1788548995653,
+          "t": 1788767801061,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "detail": {
-            "superseded": "t17-1788548995332"
+            "superseded": "t17-1788767800459"
           },
-          "ts": 1788548995654
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t17-1788548995332",
+          "turnId": "t17-1788767800459",
           "detail": {
-            "by": "t18-1788548995653"
+            "by": "t18-1788767801061"
           },
-          "ts": 1788548995654
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "state",
           "state": "listening",
-          "turnId": "t18-1788548995653",
-          "ts": 1788548995654
+          "turnId": "t18-1788767801061",
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548995654
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "state",
           "state": "thinking",
-          "turnId": "t18-1788548995653",
-          "ts": 1788548995654
+          "turnId": "t18-1788767801061",
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t18-1788548995653",
-          "ts": 1788548995654
+          "turnId": "t18-1788767801061",
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548995654
+          "ts": 1788767801061
         },
         {
-          "t": 1788548995654,
+          "t": 1788767801061,
           "type": "tool_call",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548995654
+          "ts": 1788767801061
         },
         {
-          "t": 1788548996134,
+          "t": 1788767801962,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t17-1788548995332",
+          "turnId": "t17-1788767800459",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548996134
+          "ts": 1788767801962
         },
         {
-          "t": 1788548996134,
+          "t": 1788767801962,
           "type": "tool_result",
-          "turnId": "t17-1788548995332",
+          "turnId": "t17-1788767800459",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548996134
+          "ts": 1788767801962
         },
         {
-          "t": 1788548996454,
+          "t": 1788767802563,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548996454
+          "ts": 1788767802563
         },
         {
-          "t": 1788548996454,
+          "t": 1788767802563,
           "type": "tool_result",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548996454
+          "ts": 1788767802563
         },
         {
-          "t": 1788548996454,
+          "t": 1788767802563,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t18-1788767801061",
+          "ts": 1788767802563
+        },
+        {
+          "t": 1788767802564,
           "type": "state",
           "state": "speaking",
-          "turnId": "t18-1788548995653",
-          "ts": 1788548996454
+          "turnId": "t18-1788767801061",
+          "ts": 1788767802564
         },
         {
-          "t": 1788548996454,
+          "t": 1788767802564,
           "type": "response",
-          "turnId": "t18-1788548995653",
+          "turnId": "t18-1788767801061",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548996454
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767802564
         },
         {
-          "t": 1788548996454,
+          "t": 1788767802564,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548996454
+          "ts": 1788767802564
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1504,
       "events": [
         {
-          "t": 1788548996458,
+          "t": 1788767802568,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548996458,
+          "t": 1788767802568,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548996458
+          "ts": 1788767802568
         },
         {
-          "t": 1788548996459,
+          "t": 1788767802568,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548996459
+          "ts": 1788767802568
         },
         {
-          "t": 1788548996459,
+          "t": 1788767802568,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t19-1788548996458",
+          "turnId": "t19-1788767802568",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548996459
+          "ts": 1788767802568
         },
         {
-          "t": 1788548996459,
+          "t": 1788767802568,
           "type": "state",
           "state": "thinking",
-          "turnId": "t19-1788548996458",
-          "ts": 1788548996459
+          "turnId": "t19-1788767802568",
+          "ts": 1788767802568
         },
         {
-          "t": 1788548996459,
+          "t": 1788767802569,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t19-1788548996458",
-          "ts": 1788548996459
+          "turnId": "t19-1788767802568",
+          "ts": 1788767802569
         },
         {
-          "t": 1788548996459,
+          "t": 1788767802569,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t19-1788548996458",
+          "turnId": "t19-1788767802568",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548996459
+          "ts": 1788767802569
         },
         {
-          "t": 1788548996459,
+          "t": 1788767802569,
           "type": "tool_call",
-          "turnId": "t19-1788548996458",
+          "turnId": "t19-1788767802568",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548996459
+          "ts": 1788767802569
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803169,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803170,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "detail": {
-            "superseded": "t19-1788548996458"
+            "superseded": "t19-1788767802568"
           },
-          "ts": 1788548996780
+          "ts": 1788767803170
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803170,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t19-1788548996458",
+          "turnId": "t19-1788767802568",
           "detail": {
-            "by": "t20-1788548996779"
+            "by": "t20-1788767803169"
           },
-          "ts": 1788548996780
+          "ts": 1788767803170
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803170,
           "type": "state",
           "state": "listening",
-          "turnId": "t20-1788548996779",
-          "ts": 1788548996780
+          "turnId": "t20-1788767803169",
+          "ts": 1788767803170
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803170,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548996780
+          "ts": 1788767803170
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803170,
           "type": "state",
           "state": "thinking",
-          "turnId": "t20-1788548996779",
-          "ts": 1788548996780
+          "turnId": "t20-1788767803169",
+          "ts": 1788767803170
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803171,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t20-1788548996779",
-          "ts": 1788548996780
+          "turnId": "t20-1788767803169",
+          "ts": 1788767803171
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803171,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548996780
+          "ts": 1788767803171
         },
         {
-          "t": 1788548996780,
+          "t": 1788767803171,
           "type": "tool_call",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548996780
+          "ts": 1788767803171
         },
         {
-          "t": 1788548997259,
+          "t": 1788767804070,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t19-1788548996458",
+          "turnId": "t19-1788767802568",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548997259
+          "ts": 1788767804070
         },
         {
-          "t": 1788548997260,
+          "t": 1788767804070,
           "type": "tool_result",
-          "turnId": "t19-1788548996458",
+          "turnId": "t19-1788767802568",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548997260
+          "ts": 1788767804070
         },
         {
-          "t": 1788548997581,
+          "t": 1788767804672,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548997581
+          "ts": 1788767804672
         },
         {
-          "t": 1788548997582,
+          "t": 1788767804672,
           "type": "tool_result",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548997582
+          "ts": 1788767804672
         },
         {
-          "t": 1788548997582,
+          "t": 1788767804672,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t20-1788767803169",
+          "ts": 1788767804672
+        },
+        {
+          "t": 1788767804673,
           "type": "state",
           "state": "speaking",
-          "turnId": "t20-1788548996779",
-          "ts": 1788548997582
+          "turnId": "t20-1788767803169",
+          "ts": 1788767804673
         },
         {
-          "t": 1788548997582,
+          "t": 1788767804673,
           "type": "response",
-          "turnId": "t20-1788548996779",
+          "turnId": "t20-1788767803169",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548997582
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767804673
         },
         {
-          "t": 1788548997582,
+          "t": 1788767804673,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548997582
+          "ts": 1788767804673
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 801,
+      "interruptToLastArtifactMs": 1505,
       "events": [
         {
-          "t": 1788548997585,
+          "t": 1788767804676,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548997585,
+          "t": 1788767804676,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548997585
+          "ts": 1788767804676
         },
         {
-          "t": 1788548997585,
+          "t": 1788767804676,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548997585
+          "ts": 1788767804676
         },
         {
-          "t": 1788548997586,
+          "t": 1788767804676,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t21-1788548997585",
+          "turnId": "t21-1788767804676",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548997586
+          "ts": 1788767804676
         },
         {
-          "t": 1788548997586,
+          "t": 1788767804676,
           "type": "state",
           "state": "thinking",
-          "turnId": "t21-1788548997585",
-          "ts": 1788548997586
+          "turnId": "t21-1788767804676",
+          "ts": 1788767804676
         },
         {
-          "t": 1788548997586,
+          "t": 1788767804677,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t21-1788548997585",
-          "ts": 1788548997586
+          "turnId": "t21-1788767804676",
+          "ts": 1788767804677
         },
         {
-          "t": 1788548997586,
+          "t": 1788767804677,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t21-1788548997585",
+          "turnId": "t21-1788767804676",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548997586
+          "ts": 1788767804677
         },
         {
-          "t": 1788548997586,
+          "t": 1788767804677,
           "type": "tool_call",
-          "turnId": "t21-1788548997585",
+          "turnId": "t21-1788767804676",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548997586
+          "ts": 1788767804677
         },
         {
-          "t": 1788548997907,
+          "t": 1788767805278,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548997907,
+          "t": 1788767805279,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "detail": {
-            "superseded": "t21-1788548997585"
+            "superseded": "t21-1788767804676"
           },
-          "ts": 1788548997907
+          "ts": 1788767805279
         },
         {
-          "t": 1788548997907,
+          "t": 1788767805279,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t21-1788548997585",
+          "turnId": "t21-1788767804676",
           "detail": {
-            "by": "t22-1788548997907"
+            "by": "t22-1788767805278"
           },
-          "ts": 1788548997907
+          "ts": 1788767805279
         },
         {
-          "t": 1788548997907,
+          "t": 1788767805279,
           "type": "state",
           "state": "listening",
-          "turnId": "t22-1788548997907",
-          "ts": 1788548997907
+          "turnId": "t22-1788767805278",
+          "ts": 1788767805279
         },
         {
-          "t": 1788548997907,
+          "t": 1788767805279,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548997907
+          "ts": 1788767805279
         },
         {
-          "t": 1788548997908,
+          "t": 1788767805279,
           "type": "state",
           "state": "thinking",
-          "turnId": "t22-1788548997907",
-          "ts": 1788548997908
+          "turnId": "t22-1788767805278",
+          "ts": 1788767805279
         },
         {
-          "t": 1788548997908,
+          "t": 1788767805280,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t22-1788548997907",
-          "ts": 1788548997908
+          "turnId": "t22-1788767805278",
+          "ts": 1788767805280
         },
         {
-          "t": 1788548997908,
+          "t": 1788767805280,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548997908
+          "ts": 1788767805280
         },
         {
-          "t": 1788548997908,
+          "t": 1788767805280,
           "type": "tool_call",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548997908
+          "ts": 1788767805280
         },
         {
-          "t": 1788548998387,
+          "t": 1788767806178,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t21-1788548997585",
+          "turnId": "t21-1788767804676",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548998387
+          "ts": 1788767806178
         },
         {
-          "t": 1788548998387,
+          "t": 1788767806178,
           "type": "tool_result",
-          "turnId": "t21-1788548997585",
+          "turnId": "t21-1788767804676",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548998387
+          "ts": 1788767806178
         },
         {
-          "t": 1788548998708,
+          "t": 1788767806782,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548998708
+          "ts": 1788767806782
         },
         {
-          "t": 1788548998708,
+          "t": 1788767806782,
           "type": "tool_result",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548998708
+          "ts": 1788767806782
         },
         {
-          "t": 1788548998708,
+          "t": 1788767806782,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t22-1788767805278",
+          "ts": 1788767806782
+        },
+        {
+          "t": 1788767806783,
           "type": "state",
           "state": "speaking",
-          "turnId": "t22-1788548997907",
-          "ts": 1788548998708
+          "turnId": "t22-1788767805278",
+          "ts": 1788767806783
         },
         {
-          "t": 1788548998708,
+          "t": 1788767806783,
           "type": "response",
-          "turnId": "t22-1788548997907",
+          "turnId": "t22-1788767805278",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548998708
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767806783
         },
         {
-          "t": 1788548998708,
+          "t": 1788767806783,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548998708
+          "ts": 1788767806783
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 805,
+      "interruptToLastArtifactMs": 1503,
       "events": [
         {
-          "t": 1788548998711,
+          "t": 1788767806787,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548998711,
+          "t": 1788767806786,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548998711
+          "ts": 1788767806786
         },
         {
-          "t": 1788548998711,
+          "t": 1788767806786,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548998711
+          "ts": 1788767806786
         },
         {
-          "t": 1788548998711,
+          "t": 1788767806787,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t23-1788548998711",
+          "turnId": "t23-1788767806787",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548998711
+          "ts": 1788767806787
         },
         {
-          "t": 1788548998711,
+          "t": 1788767806787,
           "type": "state",
           "state": "thinking",
-          "turnId": "t23-1788548998711",
-          "ts": 1788548998711
+          "turnId": "t23-1788767806787",
+          "ts": 1788767806787
         },
         {
-          "t": 1788548998711,
+          "t": 1788767806787,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t23-1788548998711",
-          "ts": 1788548998711
+          "turnId": "t23-1788767806787",
+          "ts": 1788767806787
         },
         {
-          "t": 1788548998711,
+          "t": 1788767806787,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t23-1788548998711",
+          "turnId": "t23-1788767806787",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548998711
+          "ts": 1788767806787
         },
         {
-          "t": 1788548998712,
+          "t": 1788767806787,
           "type": "tool_call",
-          "turnId": "t23-1788548998711",
+          "turnId": "t23-1788767806787",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548998712
+          "ts": 1788767806787
         },
         {
-          "t": 1788548999031,
+          "t": 1788767807387,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788548999032,
+          "t": 1788767807388,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "detail": {
-            "superseded": "t23-1788548998711"
+            "superseded": "t23-1788767806787"
           },
-          "ts": 1788548999032
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999032,
+          "t": 1788767807388,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t23-1788548998711",
+          "turnId": "t23-1788767806787",
           "detail": {
-            "by": "t24-1788548999031"
+            "by": "t24-1788767807387"
           },
-          "ts": 1788548999032
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999032,
+          "t": 1788767807388,
           "type": "state",
           "state": "listening",
-          "turnId": "t24-1788548999031",
-          "ts": 1788548999032
+          "turnId": "t24-1788767807387",
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999035,
+          "t": 1788767807388,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788548999035
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999035,
+          "t": 1788767807388,
           "type": "state",
           "state": "thinking",
-          "turnId": "t24-1788548999031",
-          "ts": 1788548999035
+          "turnId": "t24-1788767807387",
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999035,
+          "t": 1788767807388,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t24-1788548999031",
-          "ts": 1788548999035
+          "turnId": "t24-1788767807387",
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999035,
+          "t": 1788767807388,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788548999035
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999035,
+          "t": 1788767807388,
           "type": "tool_call",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788548999035
+          "ts": 1788767807388
         },
         {
-          "t": 1788548999513,
+          "t": 1788767808289,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t23-1788548998711",
+          "turnId": "t23-1788767806787",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788548999513
+          "ts": 1788767808289
         },
         {
-          "t": 1788548999513,
+          "t": 1788767808290,
           "type": "tool_result",
-          "turnId": "t23-1788548998711",
+          "turnId": "t23-1788767806787",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788548999513
+          "ts": 1788767808290
         },
         {
-          "t": 1788548999836,
+          "t": 1788767808889,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788548999836
+          "ts": 1788767808889
         },
         {
-          "t": 1788548999836,
+          "t": 1788767808889,
           "type": "tool_result",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788548999836
+          "ts": 1788767808889
         },
         {
-          "t": 1788548999836,
+          "t": 1788767808889,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t24-1788767807387",
+          "ts": 1788767808889
+        },
+        {
+          "t": 1788767808890,
           "type": "state",
           "state": "speaking",
-          "turnId": "t24-1788548999031",
-          "ts": 1788548999836
+          "turnId": "t24-1788767807387",
+          "ts": 1788767808890
         },
         {
-          "t": 1788548999836,
+          "t": 1788767808890,
           "type": "response",
-          "turnId": "t24-1788548999031",
+          "turnId": "t24-1788767807387",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788548999836
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767808890
         },
         {
-          "t": 1788548999836,
+          "t": 1788767808890,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548999836
+          "ts": 1788767808890
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1503,
       "events": [
         {
-          "t": 1788548999841,
+          "t": 1788767808892,
           "note": "sending utterance A"
         },
         {
-          "t": 1788548999840,
+          "t": 1788767808891,
           "type": "provider",
           "active": "rime",
-          "ts": 1788548999840
+          "ts": 1788767808891
         },
         {
-          "t": 1788548999840,
+          "t": 1788767808891,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788548999840
+          "ts": 1788767808891
         },
         {
-          "t": 1788548999841,
+          "t": 1788767808892,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t25-1788548999841",
+          "turnId": "t25-1788767808892",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788548999841
+          "ts": 1788767808892
         },
         {
-          "t": 1788548999841,
+          "t": 1788767808892,
           "type": "state",
           "state": "thinking",
-          "turnId": "t25-1788548999841",
-          "ts": 1788548999841
+          "turnId": "t25-1788767808892",
+          "ts": 1788767808892
         },
         {
-          "t": 1788548999841,
+          "t": 1788767808892,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t25-1788548999841",
-          "ts": 1788548999841
+          "turnId": "t25-1788767808892",
+          "ts": 1788767808892
         },
         {
-          "t": 1788548999841,
+          "t": 1788767808892,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t25-1788548999841",
+          "turnId": "t25-1788767808892",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788548999841
+          "ts": 1788767808892
         },
         {
-          "t": 1788548999841,
+          "t": 1788767808892,
           "type": "tool_call",
-          "turnId": "t25-1788548999841",
+          "turnId": "t25-1788767808892",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788548999841
+          "ts": 1788767808892
         },
         {
-          "t": 1788549000161,
+          "t": 1788767809492,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809493,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "detail": {
-            "superseded": "t25-1788548999841"
+            "superseded": "t25-1788767808892"
           },
-          "ts": 1788549000162
+          "ts": 1788767809493
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809493,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t25-1788548999841",
+          "turnId": "t25-1788767808892",
           "detail": {
-            "by": "t26-1788549000161"
+            "by": "t26-1788767809492"
           },
-          "ts": 1788549000162
+          "ts": 1788767809493
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809493,
           "type": "state",
           "state": "listening",
-          "turnId": "t26-1788549000161",
-          "ts": 1788549000162
+          "turnId": "t26-1788767809492",
+          "ts": 1788767809493
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809493,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788549000162
+          "ts": 1788767809493
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809493,
           "type": "state",
           "state": "thinking",
-          "turnId": "t26-1788549000161",
-          "ts": 1788549000162
+          "turnId": "t26-1788767809492",
+          "ts": 1788767809493
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809494,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t26-1788549000161",
-          "ts": 1788549000162
+          "turnId": "t26-1788767809492",
+          "ts": 1788767809494
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809494,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788549000162
+          "ts": 1788767809494
         },
         {
-          "t": 1788549000162,
+          "t": 1788767809494,
           "type": "tool_call",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788549000162
+          "ts": 1788767809494
         },
         {
-          "t": 1788549000642,
+          "t": 1788767810393,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t25-1788548999841",
+          "turnId": "t25-1788767808892",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788549000642
+          "ts": 1788767810393
         },
         {
-          "t": 1788549000642,
+          "t": 1788767810393,
           "type": "tool_result",
-          "turnId": "t25-1788548999841",
+          "turnId": "t25-1788767808892",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788549000642
+          "ts": 1788767810393
         },
         {
-          "t": 1788549000963,
+          "t": 1788767810994,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788549000963
+          "ts": 1788767810994
         },
         {
-          "t": 1788549000963,
+          "t": 1788767810994,
           "type": "tool_result",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788549000963
+          "ts": 1788767810994
         },
         {
-          "t": 1788549000963,
+          "t": 1788767810994,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t26-1788767809492",
+          "ts": 1788767810994
+        },
+        {
+          "t": 1788767810995,
           "type": "state",
           "state": "speaking",
-          "turnId": "t26-1788549000161",
-          "ts": 1788549000963
+          "turnId": "t26-1788767809492",
+          "ts": 1788767810995
         },
         {
-          "t": 1788549000963,
+          "t": 1788767810995,
           "type": "response",
-          "turnId": "t26-1788549000161",
+          "turnId": "t26-1788767809492",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788549000963
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767810995
         },
         {
-          "t": 1788549000963,
+          "t": 1788767810995,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788549000963
+          "ts": 1788767810995
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 802,
+      "interruptToLastArtifactMs": 1504,
       "events": [
         {
-          "t": 1788549000966,
+          "t": 1788767810998,
           "note": "sending utterance A"
         },
         {
-          "t": 1788549000966,
+          "t": 1788767810998,
           "type": "provider",
           "active": "rime",
-          "ts": 1788549000966
+          "ts": 1788767810998
         },
         {
-          "t": 1788549000967,
+          "t": 1788767810998,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788549000967
+          "ts": 1788767810998
         },
         {
-          "t": 1788549000967,
+          "t": 1788767810998,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t27-1788549000966",
+          "turnId": "t27-1788767810998",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788549000967
+          "ts": 1788767810998
         },
         {
-          "t": 1788549000967,
+          "t": 1788767810998,
           "type": "state",
           "state": "thinking",
-          "turnId": "t27-1788549000966",
-          "ts": 1788549000967
+          "turnId": "t27-1788767810998",
+          "ts": 1788767810998
         },
         {
-          "t": 1788549000967,
+          "t": 1788767810999,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t27-1788549000966",
-          "ts": 1788549000967
+          "turnId": "t27-1788767810998",
+          "ts": 1788767810999
         },
         {
-          "t": 1788549000967,
+          "t": 1788767810999,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t27-1788549000966",
+          "turnId": "t27-1788767810998",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788549000967
+          "ts": 1788767810999
         },
         {
-          "t": 1788549000967,
+          "t": 1788767810999,
           "type": "tool_call",
-          "turnId": "t27-1788549000966",
+          "turnId": "t27-1788767810998",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788549000967
+          "ts": 1788767810999
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811600,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811600,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "detail": {
-            "superseded": "t27-1788549000966"
+            "superseded": "t27-1788767810998"
           },
-          "ts": 1788549001288
+          "ts": 1788767811600
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811600,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t27-1788549000966",
+          "turnId": "t27-1788767810998",
           "detail": {
-            "by": "t28-1788549001288"
+            "by": "t28-1788767811600"
           },
-          "ts": 1788549001288
+          "ts": 1788767811600
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811600,
           "type": "state",
           "state": "listening",
-          "turnId": "t28-1788549001288",
-          "ts": 1788549001288
+          "turnId": "t28-1788767811600",
+          "ts": 1788767811600
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811600,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788549001288
+          "ts": 1788767811600
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811600,
           "type": "state",
           "state": "thinking",
-          "turnId": "t28-1788549001288",
-          "ts": 1788549001288
+          "turnId": "t28-1788767811600",
+          "ts": 1788767811600
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811601,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t28-1788549001288",
-          "ts": 1788549001288
+          "turnId": "t28-1788767811600",
+          "ts": 1788767811601
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811601,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788549001288
+          "ts": 1788767811601
         },
         {
-          "t": 1788549001288,
+          "t": 1788767811601,
           "type": "tool_call",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788549001288
+          "ts": 1788767811601
         },
         {
-          "t": 1788549001767,
+          "t": 1788767812500,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t27-1788549000966",
+          "turnId": "t27-1788767810998",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788549001767
+          "ts": 1788767812500
         },
         {
-          "t": 1788549001768,
+          "t": 1788767812500,
           "type": "tool_result",
-          "turnId": "t27-1788549000966",
+          "turnId": "t27-1788767810998",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788549001768
+          "ts": 1788767812500
         },
         {
-          "t": 1788549002089,
+          "t": 1788767813103,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788549002089
+          "ts": 1788767813103
         },
         {
-          "t": 1788549002090,
+          "t": 1788767813103,
           "type": "tool_result",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788549002090
+          "ts": 1788767813103
         },
         {
-          "t": 1788549002090,
+          "t": 1788767813103,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t28-1788767811600",
+          "ts": 1788767813103
+        },
+        {
+          "t": 1788767813104,
           "type": "state",
           "state": "speaking",
-          "turnId": "t28-1788549001288",
-          "ts": 1788549002090
+          "turnId": "t28-1788767811600",
+          "ts": 1788767813104
         },
         {
-          "t": 1788549002090,
+          "t": 1788767813104,
           "type": "response",
-          "turnId": "t28-1788549001288",
+          "turnId": "t28-1788767811600",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788549002090
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767813104
         },
         {
-          "t": 1788549002090,
+          "t": 1788767813104,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788549002090
+          "ts": 1788767813104
         }
       ]
     },
     {
       "pass": true,
       "reason": null,
-      "interruptToLastArtifactMs": 801,
+      "interruptToLastArtifactMs": 1504,
       "events": [
         {
-          "t": 1788549002093,
+          "t": 1788767813107,
           "note": "sending utterance A"
         },
         {
-          "t": 1788549002092,
+          "t": 1788767813106,
           "type": "provider",
           "active": "rime",
-          "ts": 1788549002092
+          "ts": 1788767813106
         },
         {
-          "t": 1788549002093,
+          "t": 1788767813106,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788549002093
+          "ts": 1788767813106
         },
         {
-          "t": 1788549002093,
+          "t": 1788767813107,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t29-1788549002093",
+          "turnId": "t29-1788767813107",
           "detail": {
             "text": "what's the status of checkout-api"
           },
-          "ts": 1788549002093
+          "ts": 1788767813107
         },
         {
-          "t": 1788549002093,
+          "t": 1788767813107,
           "type": "state",
           "state": "thinking",
-          "turnId": "t29-1788549002093",
-          "ts": 1788549002093
+          "turnId": "t29-1788767813107",
+          "ts": 1788767813107
         },
         {
-          "t": 1788549002093,
+          "t": 1788767813107,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t29-1788549002093",
-          "ts": 1788549002093
+          "turnId": "t29-1788767813107",
+          "ts": 1788767813107
         },
         {
-          "t": 1788549002093,
+          "t": 1788767813107,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t29-1788549002093",
+          "turnId": "t29-1788767813107",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "checkout-api"
             }
           },
-          "ts": 1788549002093
+          "ts": 1788767813107
         },
         {
-          "t": 1788549002093,
+          "t": 1788767813107,
           "type": "tool_call",
-          "turnId": "t29-1788549002093",
+          "turnId": "t29-1788767813107",
           "tool": "get_status",
           "args": {
             "service": "checkout-api"
           },
-          "ts": 1788549002093
+          "ts": 1788767813107
         },
         {
-          "t": 1788549002413,
+          "t": 1788767813708,
           "note": "sending interrupt + utterance B"
         },
         {
-          "t": 1788549002413,
+          "t": 1788767813708,
           "type": "log",
           "event": "interrupt_received",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "detail": {
-            "superseded": "t29-1788549002093"
+            "superseded": "t29-1788767813107"
           },
-          "ts": 1788549002413
+          "ts": 1788767813708
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813708,
           "type": "log",
           "event": "turn_superseded",
-          "turnId": "t29-1788549002093",
+          "turnId": "t29-1788767813107",
           "detail": {
-            "by": "t30-1788549002413"
+            "by": "t30-1788767813708"
           },
-          "ts": 1788549002414
+          "ts": 1788767813708
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813708,
           "type": "state",
           "state": "listening",
-          "turnId": "t30-1788549002413",
-          "ts": 1788549002414
+          "turnId": "t30-1788767813708",
+          "ts": 1788767813708
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813709,
           "type": "log",
           "event": "turn_started",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "detail": {
             "text": "actually what's the status of auth-gateway"
           },
-          "ts": 1788549002414
+          "ts": 1788767813709
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813709,
           "type": "state",
           "state": "thinking",
-          "turnId": "t30-1788549002413",
-          "ts": 1788549002414
+          "turnId": "t30-1788767813708",
+          "ts": 1788767813709
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813710,
           "type": "state",
           "state": "tool_running",
-          "turnId": "t30-1788549002413",
-          "ts": 1788549002414
+          "turnId": "t30-1788767813708",
+          "ts": 1788767813710
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813710,
           "type": "log",
           "event": "tool_call_dispatched",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "detail": {
             "tool": "get_status",
             "args": {
               "service": "auth-gateway"
             }
           },
-          "ts": 1788549002414
+          "ts": 1788767813710
         },
         {
-          "t": 1788549002414,
+          "t": 1788767813710,
           "type": "tool_call",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "tool": "get_status",
           "args": {
             "service": "auth-gateway"
           },
-          "ts": 1788549002414
+          "ts": 1788767813710
         },
         {
-          "t": 1788549002895,
+          "t": 1788767814609,
           "type": "log",
           "event": "tool_result_discarded",
-          "turnId": "t29-1788549002093",
+          "turnId": "t29-1788767813107",
           "detail": {
             "result": {
               "status": "degraded",
-              "errorRate": "4.2%",
+              "errorRate": "15%",
               "region": "us-east-1"
             },
             "stale": true
           },
-          "ts": 1788549002895
+          "ts": 1788767814609
         },
         {
-          "t": 1788549002895,
+          "t": 1788767814609,
           "type": "tool_result",
-          "turnId": "t29-1788549002093",
+          "turnId": "t29-1788767813107",
           "tool": "get_status",
           "result": {
             "status": "degraded",
-            "errorRate": "4.2%",
+            "errorRate": "15%",
             "region": "us-east-1"
           },
           "stale": true,
-          "ts": 1788549002895
+          "ts": 1788767814609
         },
         {
-          "t": 1788549003214,
+          "t": 1788767815210,
           "type": "log",
           "event": "tool_result_applied",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "detail": {
             "result": {
-              "status": "outage",
-              "errorRate": "61%",
-              "region": "us-west-2"
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
             },
             "stale": false
           },
-          "ts": 1788549003214
+          "ts": 1788767815210
         },
         {
-          "t": 1788549003214,
+          "t": 1788767815211,
           "type": "tool_result",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "tool": "get_status",
           "result": {
-            "status": "outage",
-            "errorRate": "61%",
-            "region": "us-west-2"
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
           },
           "stale": false,
-          "ts": 1788549003214
+          "ts": 1788767815211
         },
         {
-          "t": 1788549003214,
+          "t": 1788767815211,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t30-1788767813708",
+          "ts": 1788767815211
+        },
+        {
+          "t": 1788767815212,
           "type": "state",
           "state": "speaking",
-          "turnId": "t30-1788549002413",
-          "ts": 1788549003214
+          "turnId": "t30-1788767813708",
+          "ts": 1788767815212
         },
         {
-          "t": 1788549003214,
+          "t": 1788767815212,
           "type": "response",
-          "turnId": "t30-1788549002413",
+          "turnId": "t30-1788767813708",
           "final": true,
-          "text": "auth-gateway is outage, error rate 61%, region us-west-2.",
-          "ts": 1788549003214
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767815212
         },
         {
-          "t": 1788549003214,
+          "t": 1788767815212,
           "type": "state",
           "state": "idle",
           "turnId": null,
-          "ts": 1788549003214
+          "ts": 1788767815212
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "reason": null,
+      "interruptToLastArtifactMs": 1504,
+      "events": [
+        {
+          "t": 1788767815215,
+          "note": "sending utterance A"
+        },
+        {
+          "t": 1788767815214,
+          "type": "provider",
+          "active": "rime",
+          "ts": 1788767815214
+        },
+        {
+          "t": 1788767815214,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767815214
+        },
+        {
+          "t": 1788767815215,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t31-1788767815215",
+          "detail": {
+            "text": "what's the status of checkout-api"
+          },
+          "ts": 1788767815215
+        },
+        {
+          "t": 1788767815215,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t31-1788767815215",
+          "ts": 1788767815215
+        },
+        {
+          "t": 1788767815215,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t31-1788767815215",
+          "ts": 1788767815215
+        },
+        {
+          "t": 1788767815215,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t31-1788767815215",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "checkout-api"
+            }
+          },
+          "ts": 1788767815215
+        },
+        {
+          "t": 1788767815215,
+          "type": "tool_call",
+          "turnId": "t31-1788767815215",
+          "tool": "get_status",
+          "args": {
+            "service": "checkout-api"
+          },
+          "ts": 1788767815215
+        },
+        {
+          "t": 1788767815816,
+          "note": "sending interrupt + utterance B"
+        },
+        {
+          "t": 1788767815816,
+          "type": "log",
+          "event": "interrupt_received",
+          "turnId": "t32-1788767815816",
+          "detail": {
+            "superseded": "t31-1788767815215"
+          },
+          "ts": 1788767815816
+        },
+        {
+          "t": 1788767815817,
+          "type": "log",
+          "event": "turn_superseded",
+          "turnId": "t31-1788767815215",
+          "detail": {
+            "by": "t32-1788767815816"
+          },
+          "ts": 1788767815817
+        },
+        {
+          "t": 1788767815817,
+          "type": "state",
+          "state": "listening",
+          "turnId": "t32-1788767815816",
+          "ts": 1788767815817
+        },
+        {
+          "t": 1788767815817,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t32-1788767815816",
+          "detail": {
+            "text": "actually what's the status of auth-gateway"
+          },
+          "ts": 1788767815817
+        },
+        {
+          "t": 1788767815817,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t32-1788767815816",
+          "ts": 1788767815817
+        },
+        {
+          "t": 1788767815818,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t32-1788767815816",
+          "ts": 1788767815818
+        },
+        {
+          "t": 1788767815818,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t32-1788767815816",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "auth-gateway"
+            }
+          },
+          "ts": 1788767815818
+        },
+        {
+          "t": 1788767815818,
+          "type": "tool_call",
+          "turnId": "t32-1788767815816",
+          "tool": "get_status",
+          "args": {
+            "service": "auth-gateway"
+          },
+          "ts": 1788767815818
+        },
+        {
+          "t": 1788767816717,
+          "type": "log",
+          "event": "tool_result_discarded",
+          "turnId": "t31-1788767815215",
+          "detail": {
+            "result": {
+              "status": "degraded",
+              "errorRate": "15%",
+              "region": "us-east-1"
+            },
+            "stale": true
+          },
+          "ts": 1788767816717
+        },
+        {
+          "t": 1788767816717,
+          "type": "tool_result",
+          "turnId": "t31-1788767815215",
+          "tool": "get_status",
+          "result": {
+            "status": "degraded",
+            "errorRate": "15%",
+            "region": "us-east-1"
+          },
+          "stale": true,
+          "ts": 1788767816717
+        },
+        {
+          "t": 1788767817319,
+          "type": "log",
+          "event": "tool_result_applied",
+          "turnId": "t32-1788767815816",
+          "detail": {
+            "result": {
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
+            },
+            "stale": false
+          },
+          "ts": 1788767817319
+        },
+        {
+          "t": 1788767817319,
+          "type": "tool_result",
+          "turnId": "t32-1788767815816",
+          "tool": "get_status",
+          "result": {
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
+          },
+          "stale": false,
+          "ts": 1788767817319
+        },
+        {
+          "t": 1788767817319,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t32-1788767815816",
+          "ts": 1788767817319
+        },
+        {
+          "t": 1788767817320,
+          "type": "state",
+          "state": "speaking",
+          "turnId": "t32-1788767815816",
+          "ts": 1788767817320
+        },
+        {
+          "t": 1788767817320,
+          "type": "response",
+          "turnId": "t32-1788767815816",
+          "final": true,
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767817320
+        },
+        {
+          "t": 1788767817320,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767817320
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "reason": null,
+      "interruptToLastArtifactMs": 1504,
+      "events": [
+        {
+          "t": 1788767817323,
+          "note": "sending utterance A"
+        },
+        {
+          "t": 1788767817323,
+          "type": "provider",
+          "active": "rime",
+          "ts": 1788767817323
+        },
+        {
+          "t": 1788767817323,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767817323
+        },
+        {
+          "t": 1788767817323,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t33-1788767817323",
+          "detail": {
+            "text": "what's the status of checkout-api"
+          },
+          "ts": 1788767817323
+        },
+        {
+          "t": 1788767817323,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t33-1788767817323",
+          "ts": 1788767817323
+        },
+        {
+          "t": 1788767817324,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t33-1788767817323",
+          "ts": 1788767817324
+        },
+        {
+          "t": 1788767817324,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t33-1788767817323",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "checkout-api"
+            }
+          },
+          "ts": 1788767817324
+        },
+        {
+          "t": 1788767817324,
+          "type": "tool_call",
+          "turnId": "t33-1788767817323",
+          "tool": "get_status",
+          "args": {
+            "service": "checkout-api"
+          },
+          "ts": 1788767817324
+        },
+        {
+          "t": 1788767817924,
+          "note": "sending interrupt + utterance B"
+        },
+        {
+          "t": 1788767817924,
+          "type": "log",
+          "event": "interrupt_received",
+          "turnId": "t34-1788767817924",
+          "detail": {
+            "superseded": "t33-1788767817323"
+          },
+          "ts": 1788767817924
+        },
+        {
+          "t": 1788767817924,
+          "type": "log",
+          "event": "turn_superseded",
+          "turnId": "t33-1788767817323",
+          "detail": {
+            "by": "t34-1788767817924"
+          },
+          "ts": 1788767817924
+        },
+        {
+          "t": 1788767817924,
+          "type": "state",
+          "state": "listening",
+          "turnId": "t34-1788767817924",
+          "ts": 1788767817924
+        },
+        {
+          "t": 1788767817924,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t34-1788767817924",
+          "detail": {
+            "text": "actually what's the status of auth-gateway"
+          },
+          "ts": 1788767817924
+        },
+        {
+          "t": 1788767817924,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t34-1788767817924",
+          "ts": 1788767817924
+        },
+        {
+          "t": 1788767817925,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t34-1788767817924",
+          "ts": 1788767817925
+        },
+        {
+          "t": 1788767817925,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t34-1788767817924",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "auth-gateway"
+            }
+          },
+          "ts": 1788767817925
+        },
+        {
+          "t": 1788767817925,
+          "type": "tool_call",
+          "turnId": "t34-1788767817924",
+          "tool": "get_status",
+          "args": {
+            "service": "auth-gateway"
+          },
+          "ts": 1788767817925
+        },
+        {
+          "t": 1788767818825,
+          "type": "log",
+          "event": "tool_result_discarded",
+          "turnId": "t33-1788767817323",
+          "detail": {
+            "result": {
+              "status": "degraded",
+              "errorRate": "15%",
+              "region": "us-east-1"
+            },
+            "stale": true
+          },
+          "ts": 1788767818825
+        },
+        {
+          "t": 1788767818825,
+          "type": "tool_result",
+          "turnId": "t33-1788767817323",
+          "tool": "get_status",
+          "result": {
+            "status": "degraded",
+            "errorRate": "15%",
+            "region": "us-east-1"
+          },
+          "stale": true,
+          "ts": 1788767818825
+        },
+        {
+          "t": 1788767819427,
+          "type": "log",
+          "event": "tool_result_applied",
+          "turnId": "t34-1788767817924",
+          "detail": {
+            "result": {
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
+            },
+            "stale": false
+          },
+          "ts": 1788767819427
+        },
+        {
+          "t": 1788767819427,
+          "type": "tool_result",
+          "turnId": "t34-1788767817924",
+          "tool": "get_status",
+          "result": {
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
+          },
+          "stale": false,
+          "ts": 1788767819427
+        },
+        {
+          "t": 1788767819427,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t34-1788767817924",
+          "ts": 1788767819427
+        },
+        {
+          "t": 1788767819428,
+          "type": "state",
+          "state": "speaking",
+          "turnId": "t34-1788767817924",
+          "ts": 1788767819428
+        },
+        {
+          "t": 1788767819428,
+          "type": "response",
+          "turnId": "t34-1788767817924",
+          "final": true,
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767819428
+        },
+        {
+          "t": 1788767819428,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767819428
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "reason": null,
+      "interruptToLastArtifactMs": 1504,
+      "events": [
+        {
+          "t": 1788767819430,
+          "note": "sending utterance A"
+        },
+        {
+          "t": 1788767819429,
+          "type": "provider",
+          "active": "rime",
+          "ts": 1788767819429
+        },
+        {
+          "t": 1788767819429,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767819429
+        },
+        {
+          "t": 1788767819430,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t35-1788767819430",
+          "detail": {
+            "text": "what's the status of checkout-api"
+          },
+          "ts": 1788767819430
+        },
+        {
+          "t": 1788767819430,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t35-1788767819430",
+          "ts": 1788767819430
+        },
+        {
+          "t": 1788767819430,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t35-1788767819430",
+          "ts": 1788767819430
+        },
+        {
+          "t": 1788767819430,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t35-1788767819430",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "checkout-api"
+            }
+          },
+          "ts": 1788767819430
+        },
+        {
+          "t": 1788767819430,
+          "type": "tool_call",
+          "turnId": "t35-1788767819430",
+          "tool": "get_status",
+          "args": {
+            "service": "checkout-api"
+          },
+          "ts": 1788767819430
+        },
+        {
+          "t": 1788767820030,
+          "note": "sending interrupt + utterance B"
+        },
+        {
+          "t": 1788767820031,
+          "type": "log",
+          "event": "interrupt_received",
+          "turnId": "t36-1788767820030",
+          "detail": {
+            "superseded": "t35-1788767819430"
+          },
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "log",
+          "event": "turn_superseded",
+          "turnId": "t35-1788767819430",
+          "detail": {
+            "by": "t36-1788767820030"
+          },
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "state",
+          "state": "listening",
+          "turnId": "t36-1788767820030",
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t36-1788767820030",
+          "detail": {
+            "text": "actually what's the status of auth-gateway"
+          },
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t36-1788767820030",
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t36-1788767820030",
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t36-1788767820030",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "auth-gateway"
+            }
+          },
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820031,
+          "type": "tool_call",
+          "turnId": "t36-1788767820030",
+          "tool": "get_status",
+          "args": {
+            "service": "auth-gateway"
+          },
+          "ts": 1788767820031
+        },
+        {
+          "t": 1788767820930,
+          "type": "log",
+          "event": "tool_result_discarded",
+          "turnId": "t35-1788767819430",
+          "detail": {
+            "result": {
+              "status": "degraded",
+              "errorRate": "15%",
+              "region": "us-east-1"
+            },
+            "stale": true
+          },
+          "ts": 1788767820930
+        },
+        {
+          "t": 1788767820930,
+          "type": "tool_result",
+          "turnId": "t35-1788767819430",
+          "tool": "get_status",
+          "result": {
+            "status": "degraded",
+            "errorRate": "15%",
+            "region": "us-east-1"
+          },
+          "stale": true,
+          "ts": 1788767820930
+        },
+        {
+          "t": 1788767821533,
+          "type": "log",
+          "event": "tool_result_applied",
+          "turnId": "t36-1788767820030",
+          "detail": {
+            "result": {
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
+            },
+            "stale": false
+          },
+          "ts": 1788767821533
+        },
+        {
+          "t": 1788767821533,
+          "type": "tool_result",
+          "turnId": "t36-1788767820030",
+          "tool": "get_status",
+          "result": {
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
+          },
+          "stale": false,
+          "ts": 1788767821533
+        },
+        {
+          "t": 1788767821533,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t36-1788767820030",
+          "ts": 1788767821533
+        },
+        {
+          "t": 1788767821534,
+          "type": "state",
+          "state": "speaking",
+          "turnId": "t36-1788767820030",
+          "ts": 1788767821534
+        },
+        {
+          "t": 1788767821534,
+          "type": "response",
+          "turnId": "t36-1788767820030",
+          "final": true,
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767821534
+        },
+        {
+          "t": 1788767821534,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767821534
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "reason": null,
+      "interruptToLastArtifactMs": 1503,
+      "events": [
+        {
+          "t": 1788767821537,
+          "note": "sending utterance A"
+        },
+        {
+          "t": 1788767821537,
+          "type": "provider",
+          "active": "rime",
+          "ts": 1788767821537
+        },
+        {
+          "t": 1788767821537,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767821537
+        },
+        {
+          "t": 1788767821537,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t37-1788767821537",
+          "detail": {
+            "text": "what's the status of checkout-api"
+          },
+          "ts": 1788767821537
+        },
+        {
+          "t": 1788767821537,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t37-1788767821537",
+          "ts": 1788767821537
+        },
+        {
+          "t": 1788767821538,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t37-1788767821537",
+          "ts": 1788767821538
+        },
+        {
+          "t": 1788767821538,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t37-1788767821537",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "checkout-api"
+            }
+          },
+          "ts": 1788767821538
+        },
+        {
+          "t": 1788767821538,
+          "type": "tool_call",
+          "turnId": "t37-1788767821537",
+          "tool": "get_status",
+          "args": {
+            "service": "checkout-api"
+          },
+          "ts": 1788767821538
+        },
+        {
+          "t": 1788767822138,
+          "note": "sending interrupt + utterance B"
+        },
+        {
+          "t": 1788767822139,
+          "type": "log",
+          "event": "interrupt_received",
+          "turnId": "t38-1788767822138",
+          "detail": {
+            "superseded": "t37-1788767821537"
+          },
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "log",
+          "event": "turn_superseded",
+          "turnId": "t37-1788767821537",
+          "detail": {
+            "by": "t38-1788767822138"
+          },
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "state",
+          "state": "listening",
+          "turnId": "t38-1788767822138",
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t38-1788767822138",
+          "detail": {
+            "text": "actually what's the status of auth-gateway"
+          },
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t38-1788767822138",
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t38-1788767822138",
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t38-1788767822138",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "auth-gateway"
+            }
+          },
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767822139,
+          "type": "tool_call",
+          "turnId": "t38-1788767822138",
+          "tool": "get_status",
+          "args": {
+            "service": "auth-gateway"
+          },
+          "ts": 1788767822139
+        },
+        {
+          "t": 1788767823038,
+          "type": "log",
+          "event": "tool_result_discarded",
+          "turnId": "t37-1788767821537",
+          "detail": {
+            "result": {
+              "status": "degraded",
+              "errorRate": "15%",
+              "region": "us-east-1"
+            },
+            "stale": true
+          },
+          "ts": 1788767823038
+        },
+        {
+          "t": 1788767823038,
+          "type": "tool_result",
+          "turnId": "t37-1788767821537",
+          "tool": "get_status",
+          "result": {
+            "status": "degraded",
+            "errorRate": "15%",
+            "region": "us-east-1"
+          },
+          "stale": true,
+          "ts": 1788767823038
+        },
+        {
+          "t": 1788767823640,
+          "type": "log",
+          "event": "tool_result_applied",
+          "turnId": "t38-1788767822138",
+          "detail": {
+            "result": {
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
+            },
+            "stale": false
+          },
+          "ts": 1788767823640
+        },
+        {
+          "t": 1788767823640,
+          "type": "tool_result",
+          "turnId": "t38-1788767822138",
+          "tool": "get_status",
+          "result": {
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
+          },
+          "stale": false,
+          "ts": 1788767823640
+        },
+        {
+          "t": 1788767823640,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t38-1788767822138",
+          "ts": 1788767823640
+        },
+        {
+          "t": 1788767823641,
+          "type": "state",
+          "state": "speaking",
+          "turnId": "t38-1788767822138",
+          "ts": 1788767823641
+        },
+        {
+          "t": 1788767823641,
+          "type": "response",
+          "turnId": "t38-1788767822138",
+          "final": true,
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767823641
+        },
+        {
+          "t": 1788767823641,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767823641
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "reason": null,
+      "interruptToLastArtifactMs": 1503,
+      "events": [
+        {
+          "t": 1788767823643,
+          "note": "sending utterance A"
+        },
+        {
+          "t": 1788767823643,
+          "type": "provider",
+          "active": "rime",
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767823643,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767823643,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t39-1788767823643",
+          "detail": {
+            "text": "what's the status of checkout-api"
+          },
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767823643,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t39-1788767823643",
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767823643,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t39-1788767823643",
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767823643,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t39-1788767823643",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "checkout-api"
+            }
+          },
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767823643,
+          "type": "tool_call",
+          "turnId": "t39-1788767823643",
+          "tool": "get_status",
+          "args": {
+            "service": "checkout-api"
+          },
+          "ts": 1788767823643
+        },
+        {
+          "t": 1788767824244,
+          "note": "sending interrupt + utterance B"
+        },
+        {
+          "t": 1788767824244,
+          "type": "log",
+          "event": "interrupt_received",
+          "turnId": "t40-1788767824244",
+          "detail": {
+            "superseded": "t39-1788767823643"
+          },
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "log",
+          "event": "turn_superseded",
+          "turnId": "t39-1788767823643",
+          "detail": {
+            "by": "t40-1788767824244"
+          },
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "state",
+          "state": "listening",
+          "turnId": "t40-1788767824244",
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "log",
+          "event": "turn_started",
+          "turnId": "t40-1788767824244",
+          "detail": {
+            "text": "actually what's the status of auth-gateway"
+          },
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t40-1788767824244",
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "state",
+          "state": "tool_running",
+          "turnId": "t40-1788767824244",
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "log",
+          "event": "tool_call_dispatched",
+          "turnId": "t40-1788767824244",
+          "detail": {
+            "tool": "get_status",
+            "args": {
+              "service": "auth-gateway"
+            }
+          },
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767824244,
+          "type": "tool_call",
+          "turnId": "t40-1788767824244",
+          "tool": "get_status",
+          "args": {
+            "service": "auth-gateway"
+          },
+          "ts": 1788767824244
+        },
+        {
+          "t": 1788767825145,
+          "type": "log",
+          "event": "tool_result_discarded",
+          "turnId": "t39-1788767823643",
+          "detail": {
+            "result": {
+              "status": "degraded",
+              "errorRate": "15%",
+              "region": "us-east-1"
+            },
+            "stale": true
+          },
+          "ts": 1788767825145
+        },
+        {
+          "t": 1788767825145,
+          "type": "tool_result",
+          "turnId": "t39-1788767823643",
+          "tool": "get_status",
+          "result": {
+            "status": "degraded",
+            "errorRate": "15%",
+            "region": "us-east-1"
+          },
+          "stale": true,
+          "ts": 1788767825145
+        },
+        {
+          "t": 1788767825746,
+          "type": "log",
+          "event": "tool_result_applied",
+          "turnId": "t40-1788767824244",
+          "detail": {
+            "result": {
+              "status": "down",
+              "errorRate": "100%",
+              "region": "global"
+            },
+            "stale": false
+          },
+          "ts": 1788767825746
+        },
+        {
+          "t": 1788767825746,
+          "type": "tool_result",
+          "turnId": "t40-1788767824244",
+          "tool": "get_status",
+          "result": {
+            "status": "down",
+            "errorRate": "100%",
+            "region": "global"
+          },
+          "stale": false,
+          "ts": 1788767825746
+        },
+        {
+          "t": 1788767825746,
+          "type": "state",
+          "state": "thinking",
+          "turnId": "t40-1788767824244",
+          "ts": 1788767825746
+        },
+        {
+          "t": 1788767825747,
+          "type": "state",
+          "state": "speaking",
+          "turnId": "t40-1788767824244",
+          "ts": 1788767825747
+        },
+        {
+          "t": 1788767825747,
+          "type": "response",
+          "turnId": "t40-1788767824244",
+          "final": true,
+          "text": "auth-gateway is down, error rate 100%, region global.",
+          "ts": 1788767825747
+        },
+        {
+          "t": 1788767825748,
+          "type": "state",
+          "state": "idle",
+          "turnId": null,
+          "ts": 1788767825748
         }
       ]
     }
