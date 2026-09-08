@@ -46,7 +46,23 @@ class FixerClient:
         return f"t{self.turn_counter}-{int(time.time() * 1000)}"
 
     async def connect(self, session, agent_session):
-        self.ws = await session.ws_connect("ws://localhost:8787")
+        # Timeout for each connection attempt: 100000 ms (100 s), up from the
+        # previous default of a few seconds. This alone doesn't help if the
+        # backend is briefly unavailable, so it's paired with the retry loop
+        # below: as long as the mic/agent session is on, we keep trying to
+        # reach the AI backend instead of crashing the whole pipeline after
+        # a single failed attempt.
+        timeout = aiohttp.ClientTimeout(total=100000 / 1000)  # 100000ms -> 100s
+
+        while True:
+            try:
+                self.ws = await session.ws_connect("ws://localhost:8787", timeout=timeout)
+                print("Connected to AI backend.")
+                break
+            except Exception as e:
+                print(f"Could not connect to AI backend, retrying in 1s: {e}")
+                await asyncio.sleep(1)
+
         asyncio.create_task(self.listen(agent_session))
 
     async def listen(self, agent_session):
@@ -332,4 +348,3 @@ if __name__ == "__main__":
             entrypoint_fnc=entrypoint,
         )
     )
-
