@@ -34,7 +34,6 @@ RIME_EVIDENCE.md       claim / acceptance test / procedure / result
 ## Quick start (text-only, no audio yet)
 
 Three terminals:
-
 ```bash
 # 1. backend (stub today, swap for Person 2's real orchestrator later)
 cd backend-stub && npm install && npm start
