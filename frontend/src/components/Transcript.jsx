@@ -1,8 +1,25 @@
+import { MicOff } from "lucide-react";
+
 export default function Transcript({ items }) {
   if (items.length === 0) {
     return (
-      <div style={{ color: "var(--text-faint)", fontSize: 14, padding: "24px 0" }}>
-        Nothing yet. Try "status of checkout-api", or "runbook for auth-gateway".
+      <div
+        className="card"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          gap: 10,
+          padding: "36px 20px",
+          flex: 1,
+        }}
+      >
+        <MicOff size={22} style={{ color: "var(--text-faint)" }} />
+        <div style={{ color: "var(--text-dim)", fontSize: 13, lineHeight: 1.5, maxWidth: 260 }}>
+          Nothing yet. Try "status of checkout-api" or "runbook for auth-gateway".
+        </div>
       </div>
     );
   }
