@@ -10,6 +10,25 @@ const PORT = process.env.PORT || 8787;
 const DEFAULT_TOOL_DELAY_MS = Number(process.env.TOOL_DELAY_MS || 1500);
 const RIME_DOWN = process.env.RIME_DOWN === "1";
 
+// Hard safety cap on spoken text. This exists independent of the Gemini
+// brevity instructions in LLMClient.js -- LLMs don't always obey length
+// constraints, and long text sent to Rime's coda model (non-streaming HTTP
+// endpoint) can cause the agent's audio track to run out of buffered PCM
+// mid-playback, which sounds like choppy/garbled ("groggy") audio partway
+// through the response. Cutting at a sentence boundary near the limit
+// avoids ever handing Rime more than it can keep up with in real time.
+const MAX_SPOKEN_CHARS = 220;
+function capForSpeech(text) {
+  if (!text || text.length <= MAX_SPOKEN_CHARS) return text;
+  const truncated = text.slice(0, MAX_SPOKEN_CHARS);
+  const lastSentenceEnd = Math.max(
+    truncated.lastIndexOf(". "),
+    truncated.lastIndexOf("! "),
+    truncated.lastIndexOf("? ")
+  );
+  return lastSentenceEnd > 40 ? truncated.slice(0, lastSentenceEnd + 1) : truncated.trimEnd() + "...";
+}
+
 const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
@@ -102,7 +121,7 @@ wss.on("connection", (ws) => {
           type: "response",
           turnId,
           final: true,
-          text: text || "I didn't catch a service name.",
+          text: capForSpeech(text) || "I didn't catch a service name.",
         });
         session.setState("idle", null);
         session.finishTurn(turnId);
@@ -142,7 +161,7 @@ wss.on("connection", (ws) => {
           type: "response",
           turnId,
           final: true,
-          text: summary,
+          text: capForSpeech(summary),
         });
         session.setState("idle", null);
         session.finishTurn(turnId);

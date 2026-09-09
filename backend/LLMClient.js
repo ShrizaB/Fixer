@@ -12,7 +12,8 @@ class LLMClient {
         model: "gemini-2.5-flash",
         contents: text,
         config: {
-          systemInstruction: "You are an on-call ops assistant. You help engineers triage incidents by fetching status, runbooks, and deploy history.",
+          systemInstruction: "You are an on-call ops assistant. You help engineers triage incidents by fetching status, runbooks, and deploy history. " +
+            "If you cannot fulfill the request with a tool call, reply in ONE short spoken sentence (under 20 words), plain language, no markdown, no lists, no line breaks.",
           tools: [{ functionDeclarations: tools }],
         }
       });
