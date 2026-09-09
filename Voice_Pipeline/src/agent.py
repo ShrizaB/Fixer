@@ -101,27 +101,38 @@ fixer_client = FixerClient()
 
 
 # ============================================================
-# ELEVENLABS TTS
+# RIME TTS
 # ============================================================
+#
+# Rime is the primary, required spoken-output provider for this challenge
+# (see README.md / RIME_EVIDENCE.md). Model/speaker/language must match
+# RIME_MODEL_ID / RIME_SPEAKER / RIME_LANGUAGE in .env, which are the same
+# values scripts/preflight_check.js validates against Rime's live catalog
+# before every demo -- if you change one, change it in both places.
+#
+# use_websocket=False (the default) uses Rime's HTTP chunked-synthesis
+# endpoint, which is simpler and enough for the solo-demoable deliverable.
+# Set use_websocket=True later if you need lower time-to-first-audio-byte
+# for the latency-instrumentation deliverable -- that path streams token
+# by token over a websocket instead of waiting for the full utterance.
 
-import os
-try:
-    from livekit.plugins import elevenlabs
-    USE_ELEVENLABS = True
-except ImportError:
-    USE_ELEVENLABS = False
+from livekit.plugins import rime as rime_plugin
+
 
 def build_tts():
-    """Build the ElevenLabs TTS engine."""
-    if USE_ELEVENLABS:
-        log_event("using_elevenlabs_tts")
-        return elevenlabs.TTS(
-            api_key=os.environ.get("ELEVENLABS_API_KEY")
-        )
-    else:
-        log_event("using_fallback_tts")
-        # Return a fallback or raise error
-        raise RuntimeError("livekit-plugins-elevenlabs is not installed.")
+    """Build the Rime TTS engine using this project's agreed configuration."""
+    log_event(
+        "using_rime_tts",
+        model=config.RIME_MODEL_ID,
+        speaker=config.RIME_SPEAKER,
+        lang=config.RIME_LANGUAGE,
+    )
+    return rime_plugin.TTS(
+        model=config.RIME_MODEL_ID,
+        speaker=config.RIME_SPEAKER,
+        lang=config.RIME_LANGUAGE,
+        api_key=config.RIME_API_KEY,
+    )
 
 
 # ============================================================
@@ -170,21 +181,49 @@ async def entrypoint(ctx: JobContext):
 
         # -------------------------
         # Voice Activity Detection
+        #
+        # min_silence_duration is raised from Silero's default (0.55s) to
+        # give the user more room to pause naturally mid-phrase (e.g.
+        # "checkout... api") without the turn being cut off and sent as
+        # multiple separate, fragmented utterances. If this feels too
+        # slow to respond, lower it back down, but re-test with real
+        # multi-word service names before doing so, per the "pronunciation
+        # and controlled delivery" testing guidance.
         # -------------------------
 
-        vad=silero.VAD.load(),
+        vad=silero.VAD.load(min_silence_duration=1.0),
 
         # -------------------------
         # Speech-to-Text
+        #
+        # keyterm: biases Deepgram's Nova-3 model toward this project's
+        # known domain vocabulary (service names, plus the intents from
+        # tools.js), which are compound/hyphenated terms a general model
+        # is prone to mishear (e.g. "checkout-api" -> "check out the api").
+        # Per the "pronunciation and controlled delivery" testing guidance,
+        # keep this list in sync with backend/mockData.js service names.
+        #
+        # endpointing_ms is raised from Deepgram's default (25ms, very
+        # aggressive) to reduce Deepgram's OWN end-of-speech cutoff firing
+        # mid-phrase, independent of the Silero VAD silence duration set
+        # above -- both can fragment an utterance, so both need tuning.
         # -------------------------
 
         stt=deepgram.STT(
             api_key=config.DEEPGRAM_API_KEY,
+            keyterm=[
+                "checkout-api",
+                "payments-worker",
+                "auth-gateway",
+                "runbook",
+                "deploy history",
+            ],
+            endpointing_ms=300,
         ),
 
         # -------------------------
         # Text-to-Speech
-        # ElevenLabs is the primary voice.
+        # Rime is the required primary speech provider for this challenge.
         # -------------------------
 
         tts=build_tts(),
@@ -257,13 +296,28 @@ async def entrypoint(ctx: JobContext):
     # USER SPEECH STATE
     # ------------------------------------------------------------
 
+    # Tracks whether the agent is CURRENTLY speaking, so we can tell the
+    # difference between:
+    #   (a) normal turn-taking -- user starts speaking while agent is idle
+    #       or listening -- NOT an interrupt, must not supersede anything.
+    #   (b) a real barge-in -- user starts speaking WHILE Rime audio is
+    #       still playing -- this IS an interrupt and should supersede
+    #       the in-flight turn.
+    # Without this guard, every utterance sent an interrupt for itself
+    # (since "user starts speaking" fires on every turn, not just
+    # barge-ins), which is why every turn showed up as "superseded" even
+    # with no real interruption happening.
+    agent_is_speaking = {"value": False}
+
     @session.on("user_state_changed")
     def on_user_state_changed(event):
         """
         Tracks user speech-state transitions.
 
-        Useful for identifying when the user begins speaking
-        during an active Rime response.
+        Only sends an interrupt to the backend if the user starts
+        speaking WHILE the agent is actively speaking (real barge-in).
+        Normal turn-taking (user speaks while agent is idle/listening)
+        must NOT be treated as an interrupt.
         """
 
         log_event(
@@ -271,7 +325,8 @@ async def entrypoint(ctx: JobContext):
             old_state=str(event.old_state),
             new_state=str(event.new_state),
         )
-        if "SPEAKING" in str(event.new_state):
+        if event.new_state == "speaking" and agent_is_speaking["value"]:
+            log_event("barge_in_interrupt_sent")
             asyncio.create_task(fixer_client.send_interrupt())
 
     # ------------------------------------------------------------
@@ -283,7 +338,8 @@ async def entrypoint(ctx: JobContext):
         """
         Tracks agent state transitions.
 
-        These timestamps can later be used for latency analysis.
+        Also updates agent_is_speaking, which on_user_state_changed above
+        uses to distinguish real barge-in from normal turn-taking.
         """
 
         log_event(
@@ -291,6 +347,7 @@ async def entrypoint(ctx: JobContext):
             old_state=str(event.old_state),
             new_state=str(event.new_state),
         )
+        agent_is_speaking["value"] = (event.new_state == "speaking")
 
     # ------------------------------------------------------------
     # OVERLAPPING SPEECH
@@ -301,8 +358,20 @@ async def entrypoint(ctx: JobContext):
         """
         Fired when user speech overlaps with agent speech.
 
-        This is one of our strongest signals for the barge-in
-        acceptance test.
+        This is LiveKit's own, more precise overlap signal -- it only
+        fires during genuine overlap, so it does not need the
+        agent_is_speaking guard used above. This is one of our strongest
+        signals for the barge-in acceptance test.
+
+        NOTE: this can fire close together with on_user_state_changed's
+        interrupt above for the same real barge-in. fixer_client assigns
+        a fresh turnId to every interrupt sent, and the backend's
+        SessionManager treats the LATEST turnId as current -- so a
+        duplicate interrupt for the same barge-in is harmless (it just
+        supersedes-and-replaces itself), not a correctness bug. If the
+        duplicate log noise becomes annoying during evidence collection,
+        consider removing the interrupt call from on_user_state_changed
+        and relying on this event alone, since it's the more precise signal.
         """
 
         log_event(

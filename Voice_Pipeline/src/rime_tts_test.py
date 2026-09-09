@@ -7,21 +7,25 @@ from dotenv import load_dotenv
 load_dotenv()
 
 RIME_API_KEY = os.environ["RIME_API_KEY"]
-RIME_MODEL_ID = os.environ.get("RIME_MODEL_ID", "mistv2")
-RIME_SPEAKER = os.environ["RIME_SPEAKER"]
+# Defaults match this project's agreed config (.env.example / preflight_check.js).
+RIME_MODEL_ID = os.environ.get("RIME_MODEL_ID", "coda")
+RIME_SPEAKER = os.environ.get("RIME_SPEAKER", "astra")
 RIME_LANGUAGE = os.environ.get("RIME_LANGUAGE", "eng")
 
-# Confirm this endpoint against Rime's current docs before running --
-# TTS API base URLs and paths do change. This is the standard synchronous
-# synthesis endpoint as of Rime's public docs; verify the path and the
-# expected audio format (e.g. wav/mp3/pcm) before assuming this is current.
+# Confirmed against the official livekit-plugins-rime source (v1.8.0):
+# this is the real chunked-synthesis endpoint it calls internally.
 RIME_TTS_URL = "https://users.rime.ai/v1/rime-tts"
 
 
-def synthesize(text: str, out_path: str = "output_test.wav") -> None:
+def synthesize(text: str, out_path: str = "output_test.pcm") -> None:
+    # Rime's chunked endpoint returns raw PCM (audio/pcm), not a WAV
+    # container -- confirmed from the official plugin's ChunkedStream,
+    # which requests "audio/pcm" and streams raw bytes with no header.
+    # A plain media player will NOT play the saved file directly; see the
+    # note printed below for how to actually listen to it.
     headers = {
         "Authorization": f"Bearer {RIME_API_KEY}",
-        "Accept": "audio/wav",
+        "Accept": "audio/pcm",
         "Content-Type": "application/json",
     }
     payload = {
@@ -29,6 +33,7 @@ def synthesize(text: str, out_path: str = "output_test.wav") -> None:
         "text": text,
         "modelId": RIME_MODEL_ID,
         "lang": RIME_LANGUAGE,
+        "samplingRate": 22050,
     }
 
     print(f"[rime_tts_test] Sending request to Rime "
@@ -53,7 +58,13 @@ def synthesize(text: str, out_path: str = "output_test.wav") -> None:
     print(f"[rime_tts_test] Saved audio to {full_path}")
     print(f"[rime_tts_test] File size: {len(resp.content)} bytes")
     print(f"[rime_tts_test] Content-Type returned: {resp.headers.get('Content-Type')}")
-    print("[rime_tts_test] Now play this file and confirm you hear real speech.")
+    print(
+        "[rime_tts_test] This is raw PCM (16-bit, mono, 22050 Hz), not a "
+        "playable file on its own. To listen, either:\n"
+        "  ffplay -f s16le -ar 22050 -ac 1 " + full_path + "\n"
+        "  or convert to WAV first:\n"
+        "  ffmpeg -f s16le -ar 22050 -ac 1 -i " + full_path + " output/output_test.wav"
+    )
 
 
 if __name__ == "__main__":
