@@ -78,3 +78,95 @@
 {"ts": 51586.168919541, "wall_time": 1788805490.210716, "event": "user_transcript_final", "transcript": "Hello?", "item_id": null, "language": "en-US"}
 {"ts": 51587.944676416, "wall_time": 1788805491.98646, "event": "user_transcript_final", "transcript": "Tell me something about you.", "item_id": null, "language": "en-US"}
 {"ts": 51588.009052041, "wall_time": 1788805492.050836, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1011652.75, "wall_time": 1788936044.3984804, "event": "room_connected", "room": "console-9670705"}
+{"ts": 1011653.187, "wall_time": 1788936044.839133, "event": "using_rime_tts", "model": "coda", "speaker": "clementine", "lang": "eng"}
+{"ts": 1011653.281, "wall_time": 1788936044.9305902, "event": "agent_entered_session"}
+{"ts": 1011653.296, "wall_time": 1788936044.9496992, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 1011653.296, "wall_time": 1788936044.9524603, "event": "session_started"}
+{"ts": 1011668.578, "wall_time": 1788936060.2199385, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1011780.906, "wall_time": 1788936172.5432673, "event": "room_connected", "room": "console-88e3b577"}
+{"ts": 1011781.187, "wall_time": 1788936172.838843, "event": "using_rime_tts", "model": "coda", "speaker": "clementine", "lang": "eng"}
+{"ts": 1011781.312, "wall_time": 1788936172.959953, "event": "agent_entered_session"}
+{"ts": 1011781.328, "wall_time": 1788936172.975469, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 1011781.343, "wall_time": 1788936172.9835057, "event": "session_started"}
+{"ts": 1011796.593, "wall_time": 1788936188.2409422, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1011804.734, "wall_time": 1788936196.372925, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1011804.906, "wall_time": 1788936196.5487094, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1011807.453, "wall_time": 1788936199.1025996, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1011807.578, "wall_time": 1788936199.2147937, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1011814.187, "wall_time": 1788936205.8355744, "event": "room_connected", "room": "console-9185771"}
+{"ts": 1011814.484, "wall_time": 1788936206.130616, "event": "using_rime_tts", "model": "coda", "speaker": "clementine", "lang": "eng"}
+{"ts": 1011814.609, "wall_time": 1788936206.244568, "event": "agent_entered_session"}
+{"ts": 1011814.609, "wall_time": 1788936206.25416, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 1011814.625, "wall_time": 1788936206.2598994, "event": "session_started"}
+{"ts": 1011816.265, "wall_time": 1788936207.9059305, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1011818.484, "wall_time": 1788936210.1246598, "event": "user_transcript_final", "transcript": "Runbook for auth-gateway.", "item_id": null, "language": "en-US"}
+{"ts": 1011818.687, "wall_time": 1788936210.3347642, "event": "user_transcript_final", "transcript": "Runbook for auth-gateway.", "item_id": null, "language": "en-US"}
+{"ts": 1011819.578, "wall_time": 1788936211.2175343, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1011824.406, "wall_time": 1788936216.054709, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1011824.484, "wall_time": 1788936216.1277983, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1011830.093, "wall_time": 1788936221.7316306, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1011830.593, "wall_time": 1788936222.2349098, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1011845.109, "wall_time": 1788936236.744954, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012054.828, "wall_time": 1788936446.4716754, "event": "room_connected", "room": "console-8ec05451"}
+{"ts": 1012055.156, "wall_time": 1788936446.7894812, "event": "using_rime_tts", "model": "coda", "speaker": "clementine", "lang": "eng"}
+{"ts": 1012055.234, "wall_time": 1788936446.8638139, "event": "agent_entered_session"}
+{"ts": 1012055.234, "wall_time": 1788936446.8756156, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 1012055.25, "wall_time": 1788936446.8889353, "event": "session_started"}
+{"ts": 1012070.593, "wall_time": 1788936462.2260096, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012074.765, "wall_time": 1788936466.396497, "event": "room_connected", "room": "console-9360835"}
+{"ts": 1012075.078, "wall_time": 1788936466.707163, "event": "using_rime_tts", "model": "coda", "speaker": "clementine", "lang": "eng"}
+{"ts": 1012075.234, "wall_time": 1788936466.8696458, "event": "agent_entered_session"}
+{"ts": 1012075.25, "wall_time": 1788936466.8933587, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 1012075.281, "wall_time": 1788936466.912576, "event": "session_started"}
+{"ts": 1012075.89, "wall_time": 1788936467.5255792, "event": "room_connected", "room": "console-5255736"}
+{"ts": 1012076.218, "wall_time": 1788936467.857706, "event": "using_rime_tts", "model": "coda", "speaker": "clementine", "lang": "eng"}
+{"ts": 1012076.843, "wall_time": 1788936468.473207, "event": "agent_entered_session"}
+{"ts": 1012076.875, "wall_time": 1788936468.5120797, "event": "agent_state_changed", "old_state": "initializing", "new_state": "listening"}
+{"ts": 1012076.89, "wall_time": 1788936468.5257244, "event": "session_started"}
+{"ts": 1012092.234, "wall_time": 1788936483.865337, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012115.734, "wall_time": 1788936507.372285, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012116.843, "wall_time": 1788936508.4753604, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012117.0, "wall_time": 1788936508.6406214, "event": "user_transcript_final", "transcript": "Hello?", "item_id": null, "language": "en-US"}
+{"ts": 1012118.078, "wall_time": 1788936509.7126195, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012118.109, "wall_time": 1788936509.745263, "event": "agent_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012119.812, "wall_time": 1788936511.4504974, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012120.218, "wall_time": 1788936511.8585694, "event": "agent_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012124.515, "wall_time": 1788936516.156769, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012125.718, "wall_time": 1788936517.3535073, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012134.812, "wall_time": 1788936526.4421115, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012140.718, "wall_time": 1788936532.3500335, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012210.921, "wall_time": 1788936602.5530355, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012212.187, "wall_time": 1788936603.8146086, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012212.531, "wall_time": 1788936604.1602726, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012216.078, "wall_time": 1788936607.7032435, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012216.968, "wall_time": 1788936608.6082237, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012219.828, "wall_time": 1788936611.4563801, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012230.578, "wall_time": 1788936622.2084184, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012232.015, "wall_time": 1788936623.6537, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012235.375, "wall_time": 1788936627.0116491, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012239.218, "wall_time": 1788936630.8516223, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012254.218, "wall_time": 1788936645.8535771, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012536.484, "wall_time": 1788936928.108805, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012537.734, "wall_time": 1788936929.3561685, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012538.484, "wall_time": 1788936930.1035354, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012541.125, "wall_time": 1788936932.7451868, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012543.125, "wall_time": 1788936934.7495892, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012544.437, "wall_time": 1788936936.057984, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012559.453, "wall_time": 1788936951.0740578, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012560.765, "wall_time": 1788936952.3949392, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012565.281, "wall_time": 1788936956.8979192, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012565.968, "wall_time": 1788936957.5969691, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012568.531, "wall_time": 1788936960.148359, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012569.171, "wall_time": 1788936960.8000758, "event": "user_state_changed", "old_state": "listening", "new_state": "speaking"}
+{"ts": 1012570.437, "wall_time": 1788936962.053931, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012585.453, "wall_time": 1788936977.068636, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012622.468, "wall_time": 1788937014.0954335, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012623.875, "wall_time": 1788937015.5026712, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012638.875, "wall_time": 1788937030.4910507, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012643.578, "wall_time": 1788937035.2044315, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012645.171, "wall_time": 1788937036.793326, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012660.171, "wall_time": 1788937051.7975621, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
+{"ts": 1012661.328, "wall_time": 1788937052.9478545, "event": "user_state_changed", "old_state": "away", "new_state": "speaking"}
+{"ts": 1012663.968, "wall_time": 1788937055.5927145, "event": "user_state_changed", "old_state": "speaking", "new_state": "listening"}
+{"ts": 1012678.968, "wall_time": 1788937070.5909772, "event": "user_state_changed", "old_state": "listening", "new_state": "away"}
